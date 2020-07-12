@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from '../Store/actionCreators';
+import { connect } from 'react-redux';
 import { register } from '../Store/actionCreators';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -10,7 +10,7 @@ const initialState = {
     password: '',
 }
 
-function Register() {
+function Register(props) {
 
     const validation = Yup.object().shape({
         email: Yup.string()
@@ -24,6 +24,7 @@ function Register() {
 
     return (
         <div>
+            <p> You've found yourself in the register page...YAY!</p>
             <Formik
                 initialValues={initialState}
                 validationSchema={validation}
@@ -31,20 +32,19 @@ function Register() {
                 render={props => {
                     return (
                         <Form>
-                            <h2 style={{ color: '#3AAF9F', marginTop: '20px', marginBottom: '50px' }}> Create Account</h2>
-
+                            <h2> Create Account</h2>
 
                             <div>
-                                <Field className='input-style' name='email' type='email' placeholder='Email' />
+                                <Field  name='email' type='email' placeholder='Email' />
                                 <ErrorMessage name='email' component='div' />
                             </div>
 
                             <div>
-                                <Field className='input-style' name='password' type='password' placeholder='Password' />
+                                <Field name='password' type='password' placeholder='Password' />
                                 <ErrorMessage name='password' component='div' />
                             </div>
 
-                            <button className='submit-button' type='submit'>Register</button>
+                            <button type='submit'>Register</button>
                         </Form>
                     )
                 }}
