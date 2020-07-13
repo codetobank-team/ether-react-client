@@ -14,8 +14,6 @@ jobs:
       SHA8: ${GITHUB_SHA::8}
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build ./codetobank/. --file ./codetobank/Dockerfile --tag seyio/etherbank-frontend
     - name: Get short SHA
       id: slug
       run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
@@ -32,7 +30,7 @@ jobs:
         kustomize-version: "3.1.0"
     - name: Run Kustomization and Push
       run : |
-        git clone https://.:${{ secrets.GIT_TOKEN }}@github.com/codetobank/etherbank-infra
+        git clone https://.:${{ secrets.GIT_TOKEN }}@github.com/codetobank-team/etherbank-infra
         cd etherbank-infra/stage
         git config user.email "ci@ci.com"
         git config user.name "CI Tool"
