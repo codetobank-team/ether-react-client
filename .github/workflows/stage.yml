@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag seyio/etherbank-frontend
+      run: docker build ./codetobank/. --file ./codetobank/Dockerfile --tag seyio/etherbank-frontend
     - name: Get short SHA
       id: slug
       run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
