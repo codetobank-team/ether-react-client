@@ -4,7 +4,7 @@ services:
   app:
     container_name: ether_client
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       context: ./
     ports:
       - 3000:3000

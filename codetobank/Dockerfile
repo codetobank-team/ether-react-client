@@ -1,16 +1,11 @@
-FROM node:12-alpine
-# Define working directory
-WORKDIR /usr/src/app
-
-# Install dependencies
-COPY package.json yarn.lock ./
+FROM node:12-alpine as builder
+WORKDIR /app
+COPY package.json ./
+COPY yarn.lock ./
 RUN yarn
-
-# copy source and start script
 COPY . .
+RUN yarn run build
 
-# expose port
-EXPOSE 3000
 
-# execute start script
-CMD ["yarn", "start"]
+FROM nginx:alpine
+COPY --from=builder /app/build /usr/share/nginx/html
