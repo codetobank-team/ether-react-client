@@ -7,6 +7,9 @@ import * as Yup from 'yup';
 
 const initialState = {
     email: '',
+    firstName: '',
+    lastName: '',
+    transactionPin: '',
     password: '',
 }
 
@@ -35,8 +38,23 @@ function Register(props) {
                             <h2> Create Account</h2>
 
                             <div>
-                                <Field  name='email' type='email' placeholder='Email' />
+                                <Field name='email' type='email' placeholder='Email' />
                                 <ErrorMessage name='email' component='div' />
+                            </div>
+
+                            <div>
+                                <Field name='firstName' type='text' placeholder='First Name' />
+                                <ErrorMessage name='firstName' component='div' />
+                            </div>
+
+                            <div>
+                                <Field name='lastName' type='text' placeholder='Last Name' />
+                                <ErrorMessage name='lastName' component='div' />
+                            </div>
+
+                            <div>
+                                <Field name='transactionPin' type='text' placeholder='Transaction Pin' />
+                                <ErrorMessage name='transactionPin' component='div' />
                             </div>
 
                             <div>
