@@ -31,7 +31,7 @@ function Register(props) {
 
 
     return (
-        <div className='reg-container'>
+        <div className='main-container'>
             <section className='first-section'>
                 <img className='reg-img' src={one} />
             </section>

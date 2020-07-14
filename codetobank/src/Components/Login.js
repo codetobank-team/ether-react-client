@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { login } from '../Store/actionCreators';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import loginPicture from '../Images/loginPicture.png';
+import OneBlock from '../Images/OneBlock.png';
+import Ellipse from '../Images/Ellipse.png';
 
 const initialState = {
     email: '',
@@ -23,34 +26,54 @@ function Login(props) {
 
 
     return (
-        <div>
-            <p> You've found yourself in the Login page...YAY!</p>
-            <Formik
-                initialValues={initialState}
-                validationSchema={validation}
-                onSubmit={props.login}
-                render={props => {
-                    return (
-                        <Form>
-                            <h2> Create Account</h2>
+        <div className='main-container'>
+            <section className='first-section'>
+                <img className='reg-img' src={loginPicture} />
+            </section>
 
-                            <div>
-                                <Field  name='email' type='email' placeholder='Email' />
-                                <ErrorMessage name='email' component='div' />
-                            </div>
+            <section className='second-section'>
+                <Formik
+                    initialValues={initialState}
+                    validationSchema={validation}
+                    onSubmit={props.login}
+                    render={props => {
+                        return (
+                            <Form>
+                                <div className='imgDiv'>
 
-                            <div>
-                                <Field name='password' type='password' placeholder='Password' />
-                                <ErrorMessage name='password' component='div' />
-                            </div>
+                                    <img className='ellipse' src={Ellipse} />
 
-                            <button type='submit'>Login</button>
-                        </Form>
-                    )
-                }}
-            >
+                                    <img className='oneblock' src={OneBlock} />
+                                </div>
 
-            </Formik>
+                                <h2 className='h2-text'>Welcome to OneBlock</h2>
+
+                                <p>Please login below</p>
+
+                                <div>
+                                    <Field className='inputs' name='email' type='email' placeholder='Email' />
+                                    <ErrorMessage name='email' component='div' />
+                                </div>
+
+                                <div>
+                                    <Field className='inputs' name='password' type='password' placeholder='Password' />
+                                    <ErrorMessage name='password' component='div' />
+                                </div>
+
+                                <button className='submit' type='submit'>Login</button>
+
+                                <p>New to OneBlock?
+                                    <Link to="/login"><p style={{color:'red'}}>Sign up here</p>
+                                    </Link>
+                                </p>
+
+                            </Form>
+                        )
+                    }}
+                >
+
+                </Formik>
+            </section>
 
         </div>
     )
