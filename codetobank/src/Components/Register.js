@@ -66,10 +66,10 @@ function Register(props) {
                                     <ErrorMessage name='lastName' component='div' />
                                 </div>
 
-                                {/* <div>
+                                <div>
                                     <Field className='inputs' name='transactionPin' type='text' placeholder='Transaction Pin' />
                                     <ErrorMessage name='transactionPin' component='div' />
-                                </div> */}
+                                </div>
 
                                 <div>
                                     <Field className='inputs' name='email' type='email' placeholder='Email' />
