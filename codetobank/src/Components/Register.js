@@ -53,7 +53,7 @@ function Register(props) {
 
                                 <h2 className='h2-text'>Create Account</h2>
 
-                                <p style={{width: '89%', margin:'auto'}}>Create a free account and start transacting with blockchain technology.</p>
+                                <p className='p-text'>Create a free account and start transacting with blockchain technology.</p>
 
 
                                 <div>

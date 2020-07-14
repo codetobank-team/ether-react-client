@@ -48,7 +48,7 @@ function Login(props) {
 
                                 <h2 className='h2-text'>Welcome to OneBlock</h2>
 
-                                <p>Please login below</p>
+                                <p className='login-p'>Please login below</p>
 
                                 <div>
                                     <Field className='inputs' name='email' type='email' placeholder='Email' />
@@ -62,8 +62,8 @@ function Login(props) {
 
                                 <button className='submit' type='submit'>Login</button>
 
-                                <p>New to OneBlock?
-                                    <Link to="/login"><p style={{color:'red'}}>Sign up here</p>
+                                <p className='login-p2'>New to OneBlock?
+                                    <Link to="/"><p style={{color:'red'}}>Sign up here</p>
                                     </Link>
                                 </p>
 
