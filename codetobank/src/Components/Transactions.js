@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-function Dashboard(){
+function Transaction(){
     return(
         <div>
-            Dashboard
+            Transactions
         </div>
     )
 }
 
-export default Dashboard;
+export default Transaction;

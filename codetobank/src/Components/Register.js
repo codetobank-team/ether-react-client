@@ -31,7 +31,7 @@ function Register(props) {
 
 
     return (
-        <div className='reg-container'>
+        <div className='main-container'>
             <section className='first-section'>
                 <img className='reg-img' src={one} />
             </section>
@@ -53,7 +53,7 @@ function Register(props) {
 
                                 <h2 className='h2-text'>Create Account</h2>
 
-                                <p style={{width: '89%', margin:'auto'}}>Create a free account and start transacting with blockchain technology.</p>
+                                <p className='p-text'>Create a free account and start transacting with blockchain technology.</p>
 
 
                                 <div>
@@ -66,10 +66,10 @@ function Register(props) {
                                     <ErrorMessage name='lastName' component='div' />
                                 </div>
 
-                                {/* <div>
+                                <div>
                                     <Field className='inputs' name='transactionPin' type='text' placeholder='Transaction Pin' />
                                     <ErrorMessage name='transactionPin' component='div' />
-                                </div> */}
+                                </div>
 
                                 <div>
                                     <Field className='inputs' name='email' type='email' placeholder='Email' />

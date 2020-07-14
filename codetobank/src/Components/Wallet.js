@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-function Dashboard(){
+function Wallet(){
     return(
         <div>
-            Dashboard
+            Wallet
         </div>
     )
 }
 
-export default Dashboard;
+export default Wallet;

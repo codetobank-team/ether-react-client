@@ -1,11 +1,13 @@
 import React from 'react';
+import './reset.css';
 import './App.css';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreators from './Store/actionCreators';
-import Dashboard from './Components/Dashboard';
+import Container from './Components/Container';
 import Register from './Components/Register';
 import Login from './Components/Login';
+
 
 
 
@@ -15,7 +17,8 @@ function App() {
 
       <Route exact path='/' component={Register} />
       <Route exact path='/login' component={Login} />
-      <Route exact path='/dashboard' render={props => authCheck(Dashboard, props)} />
+      <Route exact path='/container' component={Container}/>
+      {/* <Route exact path='/dashboard' render={props => authCheck(Dashboard, props)} /> */}
     </div>
   );
 }
