@@ -4,7 +4,7 @@ import './App.css';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreators from './Store/actionCreators';
-import Dashboard from './Components/Container';
+import Container from './Components/Container';
 import Register from './Components/Register';
 import Login from './Components/Login';
 
