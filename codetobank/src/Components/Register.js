@@ -51,7 +51,7 @@ function Register(props) {
                                     <img className='oneblock' src={OneBlock} />
                                 </div>
 
-                                <h2 style={{color:'#C41426'}}>Create Account</h2>
+                                <h2 className='h2-text'>Create Account</h2>
 
                                 <p style={{width: '89%', margin:'auto'}}>Create a free account and start transacting with blockchain technology.</p>
 
