@@ -27,6 +27,10 @@ This shows the ui of a blockchain application that would enable transfers betwee
 * Styled comoponents
 * Material ui
 
+### others
+* Formik
+* Yup
+
 ### State Management
 
 * Redux

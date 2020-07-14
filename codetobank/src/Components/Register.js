@@ -4,9 +4,17 @@ import { connect } from 'react-redux';
 import { register } from '../Store/actionCreators';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import one from '../Images/one.png';
+import OneBlock from '../Images/OneBlock.png';
+import Ellipse from '../Images/Ellipse.png';
+
+
 
 const initialState = {
     email: '',
+    firstName: '',
+    lastName: '',
+    transactionPin: '',
     password: '',
 }
 
@@ -23,34 +31,71 @@ function Register(props) {
 
 
     return (
-        <div>
-            <p> You've found yourself in the register page...YAY!</p>
-            <Formik
-                initialValues={initialState}
-                validationSchema={validation}
-                onSubmit={props.register}
-                render={props => {
-                    return (
-                        <Form>
-                            <h2> Create Account</h2>
+        <div className='reg-container'>
+            <section className='first-section'>
+                <img className='reg-img' src={one} />
+            </section>
 
-                            <div>
-                                <Field  name='email' type='email' placeholder='Email' />
-                                <ErrorMessage name='email' component='div' />
-                            </div>
+            <section className='second-section'>
+                <Formik
+                    initialValues={initialState}
+                    validationSchema={validation}
+                    onSubmit={props.register}
+                    render={props => {
+                        return (
+                            <Form>
+                                <div className='imgDiv'>
 
-                            <div>
-                                <Field name='password' type='password' placeholder='Password' />
-                                <ErrorMessage name='password' component='div' />
-                            </div>
+                                    <img className='ellipse' src={Ellipse} />
 
-                            <button type='submit'>Register</button>
-                        </Form>
-                    )
-                }}
-            >
+                                    <img className='oneblock' src={OneBlock} />
+                                </div>
 
-            </Formik>
+                                <h2 className='h2-text'>Create Account</h2>
+
+                                <p style={{width: '89%', margin:'auto'}}>Create a free account and start transacting with blockchain technology.</p>
+
+
+                                <div>
+                                    <Field className='inputs' name='firstName' type='text' placeholder='First Name' />
+                                    <ErrorMessage name='firstName' component='div' />
+                                </div>
+
+                                <div>
+                                    <Field className='inputs' name='lastName' type='text' placeholder='Last Name' />
+                                    <ErrorMessage name='lastName' component='div' />
+                                </div>
+
+                                {/* <div>
+                                    <Field className='inputs' name='transactionPin' type='text' placeholder='Transaction Pin' />
+                                    <ErrorMessage name='transactionPin' component='div' />
+                                </div> */}
+
+                                <div>
+                                    <Field className='inputs' name='email' type='email' placeholder='Email' />
+                                    <ErrorMessage name='email' component='div' />
+                                </div>
+
+                                <div>
+                                    <Field className='inputs' name='password' type='password' placeholder='Password' />
+                                    <ErrorMessage name='password' component='div' />
+                                </div>
+
+                                <button className='submit' type='submit'>Create Account</button>
+
+                                <p> Already have an account?
+                                    <Link to="/login"><p style={{color:'red'}}>Log in</p>
+                                    </Link>
+                                </p>
+
+                            </Form>
+                        )
+                    }}
+                >
+
+                </Formik>
+
+            </section>
 
         </div>
     )
