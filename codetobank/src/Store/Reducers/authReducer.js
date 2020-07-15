@@ -2,7 +2,7 @@ import * as types from '../actionTypes';
 
 const initialState = {
     loading: false,
-    token: '',
+    data: '',
     error: false
 };
 
@@ -14,9 +14,9 @@ function authReducer(state = initialState, action) {
             return { ...state, loading: true };
 
         case (types.REGISTER_SUCCESS):
-            return { ...state, token: action.payload, loading: false }
+            return { ...state, data: action.payload, loading: false }
         case (types.LOGIN_SUCCESS):
-            return { ...state, token: action.payload, loading: false };
+            return { ...state, data: action.payload, loading: false };
 
         case (types.REGISTER_FAILURE):
             return { ...state, error: true, loading: false }

@@ -182,12 +182,15 @@ flex:1;
 
 
 .dashboard-content {
-  display: flex;
-  justify-content: space-between;
+    min-height: 100vh;
+  background-color: white;
+  margin: 0 34px;
+  border-radius: 8px;
 }
 
-.dashboard-info{
-
+.dashboard-content-section{
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-img {

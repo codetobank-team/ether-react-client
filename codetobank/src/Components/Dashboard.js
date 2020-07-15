@@ -44,6 +44,7 @@ export const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 34px;
 `;
 
 
@@ -60,21 +61,25 @@ function Dashboard() {
 
             <div className='dashboard-content'>
 
-                <div className='dashboard-info'>
-                    <P>Available Balance</P>
-                    <p> as at date</p>
-                    <H2>N40,000</H2>
-                    <Button>Send</Button>
-                </div>
+                <section className='dashboard-content-section'>
+                    <div className='dashboard-info'>
+                        <P>Available Balance</P>
+                        <p> as at date</p>
+                        <H2>N40,000</H2>
+                        <Button>Send</Button>
+                    </div>
 
-                <div className='dashboard-info'>
-                    <img className='card-img' src={card} alt='card' />
+                    <div className='dashboard-info'>
+                        <img className='card-img' src={card} alt='card' />
+                    </div>
+
+                </section>
+                <div>
+                    <p>Transaction History</p>
                 </div>
             </div>
 
-            <div>
-                <p>Transaction History</p>
-            </div>
+
 
 
 
