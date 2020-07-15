@@ -62,7 +62,7 @@ function Wallet(props) {
                         <DIV>
                             <p>Stay informed : COVID-19</p> <br />
                             <a href='https://covid19.ncdc.gov.ng/' target='blank'>
-                                Get the latest information from the NSCDC about the COVID-</a>
+                                Get the latest information from the NSCDC about the COVID-19</a>
                         </DIV>
 
                         <Button>Send</Button>
@@ -78,8 +78,8 @@ function Wallet(props) {
 
 
                 <div>
-                    <Div >
-                        <div>
+                    <div className = "input-content-section">
+                        <div className="inputsection">
 
                             <div>
                                 <p>Receiver Account ID</p>
@@ -92,7 +92,7 @@ function Wallet(props) {
                             </div>
                         </div>
 
-                        <div>
+                        <div className="inputsection" >
                             <div>
                                 <p>Amount</p>
                                 <Input type='text' placeholder='N0.00' onChange={onAmountChange} value={amount} />
@@ -115,7 +115,7 @@ function Wallet(props) {
                         </div>
                        
 
-                    </Div>
+                    </div>
 
 
 

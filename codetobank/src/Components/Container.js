@@ -5,6 +5,9 @@ import Wallet from '../Components/Wallet';
 import Transactions from '../Components/Transactions';
 import Ellipse from '../Images/Ellipse.png';
 import OneBlock from '../Images/OneBlock.png';
+import dashboard from '../Images/dashboard.svg';
+import walletfocus from '../Images/walletfocus.svg';
+import exit from '../Images/exit.svg';
 
 
 function Container(props) {
@@ -21,23 +24,23 @@ function Container(props) {
                 <div className='dashboard-logo'>
                     <img className='container-ellipse' src={Ellipse} />
 
-                    <img className='container-oneblock' src={OneBlock} />
+                    {/* <img className='container-oneblock' src={OneBlock} /> */}
                 </div>
-                <NavLink exact to='/app/dashboard'>
+                <NavLink exact to='/app/dashboard'  className='dashboard-logo'>
                 
-                    <h3 className='side-bar' >Dashboard</h3>
+                   <img src = {dashboard}  /> <h3 className='side-bar' >Dashboard</h3>
                 </NavLink>
 
-                <NavLink exact to='/app/wallet'>
-                    <h3 className='side-bar'>Wallet</h3>
+                <NavLink exact to='/app/wallet' >  
+                <h3 className='side-bar'>Wallet</h3>
                 </NavLink>
 {/* 
                 <NavLink exact to='/app/transactions'>
                     <h3 className='side-bar'>Transactions</h3>
                 </NavLink> */}
 
-                <NavLink exact to='/' onClick={onLogout}>
-                    <h3 className='side-bar'>Logout</h3>
+                <NavLink exact to='/' onClick={onLogout}  className='dashboard-logo'>
+                <img src = {exit} /> <h3 className='side-bar'>Logout</h3>
                 </NavLink>
             </section>
 
