@@ -2,6 +2,8 @@ import React from 'react';
 import card from '../Images/card.png';
 import TopBar from '../Components/TopBar';
 import styled from 'styled-components';
+import Transaction from './Transactions';
+import {DIV}from '../Components/Wallet';
 
 export const P = styled.p`
 font-family: 'Poppins', sans-serif;
@@ -65,9 +67,15 @@ function Dashboard() {
                 <section className='dashboard-content-section'>
                     <div className='dashboard-info'>
                         <P>Available Balance</P>
-                        <p> as at date</p>
+                        <p className='date-p'> as at date</p>
                         <H2>N40,000</H2>
                         {/* <Button>Send</Button> */}
+
+                        <DIV>
+                            <p>Stay informed : COVID-19</p> <br />
+                            <a href='https://covid19.ncdc.gov.ng/' target='blank'>
+                                Get the latest information from the NSCDC about the COVID-</a>
+                        </DIV>
                     </div>
 
                     <div className='dashboard-info'>
@@ -76,7 +84,8 @@ function Dashboard() {
 
                 </section>
                 <div>
-                    <p>Transaction History</p>
+                    <P2>Transaction History</P2>
+                    <Transaction/>
                 </div>
             </div>
 
@@ -89,3 +98,11 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
+const P2 = styled.p`
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+`;

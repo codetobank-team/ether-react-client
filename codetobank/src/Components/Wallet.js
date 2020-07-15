@@ -199,7 +199,7 @@ margin-top: 15px;
 margin-left: 77%;
 `;
 
-const DIV = styled.div`
+export const DIV = styled.div`
 font-family:  'Poppins', sans-serif;
 line-height: 0.09px;
 text-align: initial;
