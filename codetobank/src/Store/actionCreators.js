@@ -1,15 +1,17 @@
 import * as types from './actionTypes';
 import axios from 'axios';
+import{history} from '../App';
 import { axiosWithAuth } from '../axiosWithAuth';
 
-export const apiURL = 'https://cseu3-mud.herokuapp.com/api';
+export const apiURL = 'http://oneblock.ddns.net/api/auth';
 
 export const register = userData => dispatch => {
     dispatch({ type: types.REGISTER_START })
-    return axios.post(`${apiURL}/registration/`, userData)
+    return axios.post(`${apiURL}/register`, userData)
         .then(res => {
             localStorage.setItem('token', res.data.key)
             dispatch({ type: types.REGISTER_SUCCESS, payload: res.data.key })
+            history.push("/app/dashboard")   
         })
         .catch(err => {
             // console.log(err);
@@ -20,11 +22,12 @@ export const register = userData => dispatch => {
 
 export const login = userData => dispatch => {
     dispatch({ type: types.LOGIN_START })
-    return axios.post(`${apiURL}/login/`, userData)
+    return axios.post(`${apiURL}/login`, userData)
         .then(res => {
             // console.log(res);
             localStorage.setItem('token', res.data.key);
             dispatch({ type: types.LOGIN_SUCCESS, payload: res.data.key });
+            history.push("/app/dashboard") 
         })
         .catch(err => {
             // console.log(err);

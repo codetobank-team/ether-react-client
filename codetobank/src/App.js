@@ -1,24 +1,26 @@
 import React from 'react';
 import './reset.css';
 import './App.css';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter, Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreators from './Store/actionCreators';
 import Container from './Components/Container';
 import Register from './Components/Register';
 import Login from './Components/Login';
+import {createBrowserHistory} from 'history';
 
 
-
+export const history = createBrowserHistory();
 
 function App() {
   return (
     <div className="App">
-
-      <Route exact path='/' component={Register} />
-      <Route exact path='/login' component={Login} />
-      <Route exact path='/container' component={Container}/>
-      {/* <Route exact path='/dashboard' render={props => authCheck(Dashboard, props)} /> */}
+      <Router history={history}>
+        <Route exact path='/' component={Register} />
+        <Route exact path='/login' component={Login} />
+        {/* <Route path='/app' component={Container} /> */}
+        <Route path='/app' render={props => authCheck(Container, props)} />
+      </Router>
     </div>
   );
 }
