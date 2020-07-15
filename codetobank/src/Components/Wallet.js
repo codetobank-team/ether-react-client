@@ -12,6 +12,7 @@ function Wallet(props) {
     const [recieverAccountID, setRecieverAccountID] = useState('');
     const [pin, setPinChange] = useState('');
     const [amount, setAmount] = useState('');
+    const [showWalletForm, setShowWalletForm] = useState(false)
     const [referenceNote, setReferenceNote] = useState('');
 
     const onRecieverAccountIDChange = event => {
@@ -65,7 +66,7 @@ function Wallet(props) {
                                 Get the latest information from the NSCDC about the COVID-</a>
                         </DIV>
 
-                        <Button>Send</Button>
+                        <Button onClick={() => setShowWalletForm(true)}>Send</Button>
 
                         <WhiteButton>Recieve</WhiteButton>
 
@@ -76,53 +77,56 @@ function Wallet(props) {
                     </div>
                 </section>
 
+                {showWalletForm && (
+                           <div>
+                           <Div >
+                               <div>
+       
+                                   <div>
+                                       <p>Receiver Account ID</p>
+                                       <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
+                                   </div>
+       
+                                   <div>
+                                       <p>Enter Transaction Pin</p>
+                                       <Input type='text' placeholder='****' onChange={onPinChange} value={pin} />
+                                   </div>
+                               </div>
+       
+                               <div>
+                                   <div>
+                                       <p>Amount</p>
+                                       <Input type='text' placeholder='N0.00' onChange={onAmountChange} value={amount} />
+                                   </div>
+       
+       
+                                   <div>
+       
+                                       <p>Refrence note</p>
+                                       <Input type='text' placeholder='Optional' onChange={onReferenceNoteChange} value={referenceNote} />
+       
+                                   </div>
+       
+                                   <ButtonDiv>
+                                   <WButton onClick={onSubmit} >Send</WButton>
+                               </ButtonDiv>
+       
+       
+       
+                               </div>
+                              
+       
+                           </Div>
+       
+       
+       
+                       </div>
+       
+       
+       
+                )}
 
-                <div>
-                    <Div >
-                        <div>
-
-                            <div>
-                                <p>Receiver Account ID</p>
-                                <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
-                            </div>
-
-                            <div>
-                                <p>Enter Transaction Pin</p>
-                                <Input type='text' placeholder='****' onChange={onPinChange} value={pin} />
-                            </div>
-                        </div>
-
-                        <div>
-                            <div>
-                                <p>Amount</p>
-                                <Input type='text' placeholder='N0.00' onChange={onAmountChange} value={amount} />
-                            </div>
-
-
-                            <div>
-
-                                <p>Refrence note</p>
-                                <Input type='text' placeholder='Optional' onChange={onReferenceNoteChange} value={referenceNote} />
-
-                            </div>
-
-                            <ButtonDiv>
-                            <WButton onClick={onSubmit} >Send</WButton>
-                        </ButtonDiv>
-
-
-
-                        </div>
-                       
-
-                    </Div>
-
-
-
-                </div>
-
-
-
+         
                 {/* <div>
                     <p>Transaction History</p>
                 </div> */}
