@@ -43,6 +43,16 @@ border-radius: 8px;
 color:white;
 border: #3D8A86;
 `
+export const WhiteButton = styled.button`
+width: 100px;
+height: 42px;
+background: white;
+border-radius: 8px;
+color:#3D8A86;
+border: 1px solid #3D8A86;
+margin-left:5px;
+`;
+
 export const Header = styled.div`
     display: flex;
     justify-content: space-between;
@@ -69,7 +79,7 @@ function Dashboard() {
                         <P>Available Balance</P>
                         <p className='date-p'> as at date</p>
                         <H2>N40,000</H2>
-                        {/* <Button>Send</Button> */}
+                        
 
                         <DIV>
                             <p>Stay informed : COVID-19</p> <br />

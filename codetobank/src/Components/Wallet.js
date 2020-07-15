@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import card from '../Images/card.png';
-import { P, P1, H2, Button, Header } from '../Components/Dashboard';
+import { P, P1, H2, Button, Header, WhiteButton } from '../Components/Dashboard';
 import styled from 'styled-components';
 import TopBar from '../Components/TopBar';
 import { connect } from "react-redux";
@@ -64,6 +64,10 @@ function Wallet(props) {
                             <a href='https://covid19.ncdc.gov.ng/' target='blank'>
                                 Get the latest information from the NSCDC about the COVID-</a>
                         </DIV>
+
+                        <Button>Send</Button>
+
+                        <WhiteButton>Recieve</WhiteButton>
 
                     </div>
 
@@ -139,6 +143,7 @@ display:flex;
 justify-content:space-between;
 flex-wrap: wrap;
 padding-right:50px;
+/* border: 1px solid #C41426; */
 p{
     /* font-style: normal; */
 font-weight: 500;
@@ -203,6 +208,11 @@ export const DIV = styled.div`
 font-family:  'Poppins', sans-serif;
 line-height: 0.09px;
 text-align: initial;
+border: 1px solid #C41426;
+margin-bottom:10px;
+border-radius: 5px;
+padding:5px;
+/* box-sizing: border-box; */
 p{
     font-style: normal;
     font-weight: 600;

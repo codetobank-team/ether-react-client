@@ -3,7 +3,7 @@ import axios from 'axios';
 import { history } from '../App';
 // import {axiosWithAuth}  from '../axiosWithAuth';
 
-export const apiURL = 'http://oneblock.ddns.net/api';
+export const apiURL = 'http://oneblockdev.ddns.net/api';
 
 export const register = userData => dispatch => {
     dispatch({ type: types.REGISTER_START })
