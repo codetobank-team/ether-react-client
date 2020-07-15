@@ -24,16 +24,17 @@ function Container(props) {
                     <img className='container-oneblock' src={OneBlock} />
                 </div>
                 <NavLink exact to='/app/dashboard'>
-                    <h3 className='side-bar'>Dashboard</h3>
+                
+                    <h3 className='side-bar' >Dashboard</h3>
                 </NavLink>
 
                 <NavLink exact to='/app/wallet'>
                     <h3 className='side-bar'>Wallet</h3>
                 </NavLink>
-
+{/* 
                 <NavLink exact to='/app/transactions'>
                     <h3 className='side-bar'>Transactions</h3>
-                </NavLink>
+                </NavLink> */}
 
                 <NavLink exact to='/' onClick={onLogout}>
                     <h3 className='side-bar'>Logout</h3>
@@ -43,7 +44,7 @@ function Container(props) {
             <section className='section-two'>
                 <Route exact path="/app/dashboard" render={props => <Dashboard {...props} />} />
                 <Route exact path="/app/wallet" render={props => <Wallet {...props} />} />
-                <Route exact path="/app/transactions" render={props => <Transactions {...props} />} />
+                {/* <Route exact path="/app/transactions" render={props => <Transactions {...props} />} /> */}
             </section>
 
 
