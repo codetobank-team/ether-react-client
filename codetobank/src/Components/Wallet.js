@@ -4,8 +4,8 @@ import { P, P1, H2, Button, Header } from '../Components/Dashboard';
 import styled from 'styled-components';
 import TopBar from '../Components/TopBar';
 import { connect } from "react-redux";
-import {axiosWithAuth }from '../axiosWithAuth';
-import {postTransactions} from '../Store/actionCreators';
+import { axiosWithAuth } from '../axiosWithAuth';
+import { postTransactions } from '../Store/actionCreators';
 
 function Wallet(props) {
 
@@ -43,7 +43,7 @@ function Wallet(props) {
         props.postTransactions(request)
     }
 
-    
+
     return (
         <section className='dashboard-section'>
 
@@ -55,10 +55,16 @@ function Wallet(props) {
             <div className='dashboard-content'>
                 <section className='dashboard-content-section'>
                     <div className='dashboard-info'>
-                        <P>Available Balance as at </P>
-                        <p>date</p>
+                        <P>Available Balance </P>
+                        <p className='date-p'>as at date</p>
                         <H2>N40,000</H2>
-                        <Button>Send</Button>
+
+                        <DIV>
+                            <p>Stay informed : COVID-19</p> <br />
+                            <a href='https://covid19.ncdc.gov.ng/' target='blank'>
+                                Get the latest information from the NSCDC about the COVID-</a>
+                        </DIV>
+
                     </div>
 
                     <div className='dashboard-info'>
@@ -69,46 +75,53 @@ function Wallet(props) {
 
                 <div>
                     <Div >
-
-                        {/* <div>
-                            <p>Your Account Id</p>
-                            <Input type='text' placeholder='Your Account Id' onChange={onChange} />
-                        </div> */}
-
                         <div>
-                            <p>Receiver Account ID</p>
-                            <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
+
+                            <div>
+                                <p>Receiver Account ID</p>
+                                <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
+                            </div>
+
+                            <div>
+                                <p>Enter Transaction Pin</p>
+                                <Input type='text' placeholder='****' onChange={onPinChange} value={pin} />
+                            </div>
                         </div>
 
                         <div>
-                            <p>Pin</p>
-                            <Input type='text' placeholder='Enter Transaction Pin' onChange={onPinChange} value={pin} />
+                            <div>
+                                <p>Amount</p>
+                                <Input type='text' placeholder='N0.00' onChange={onAmountChange} value={amount} />
+                            </div>
+
+
+                            <div>
+
+                                <p>Refrence note</p>
+                                <Input type='text' placeholder='Optional' onChange={onReferenceNoteChange} value={referenceNote} />
+
+                            </div>
+
+                            <ButtonDiv>
+                            <WButton onClick={onSubmit} >Send</WButton>
+                        </ButtonDiv>
+
+
+
                         </div>
-
-
-                        <div>
-                            <p>Amount</p>
-                            <Input type='text' placeholder='Amount' onChange={onAmountChange} value={amount} />
-                        </div>
-
+                       
 
                     </Div>
 
-                    <div>
-
-                        <p>Add an optional refrence note</p>
-                        <INput type='text' placeholder='Optional' onChange={onReferenceNoteChange} value={referenceNote} />
 
 
-                        <WButton onClick={onSubmit} >Send</WButton>
-
-
-                    </div>
                 </div>
 
-                <div>
+
+
+                {/* <div>
                     <p>Transaction History</p>
-                </div>
+                </div> */}
             </div>
 
 
@@ -119,12 +132,31 @@ function Wallet(props) {
     )
 }
 
-export default connect(state => state, {postTransactions})(Wallet);
+export default connect(state => state, { postTransactions })(Wallet);
 
 const Div = styled.div`
 display:flex;
 justify-content:space-between;
 flex-wrap: wrap;
+padding-right:50px;
+p{
+    /* font-style: normal; */
+font-weight: 500;
+font-size: 14px;
+/* line-height: 28px; */
+letter-spacing: 0.4px;
+color: #252733;
+text-align: left;
+
+}
+`;
+
+
+
+const ButtonDiv = styled.div`
+display:flex;
+/* justify-content: flex-end; */
+/* padding-right:50px; */
 `;
 
 const Input = styled.input`
@@ -139,6 +171,7 @@ font-family: 'Poppins', sans-serif;
   margin-top: 10px;
   font-size: 14px;  
   font-size: 14px;
+  margin-bottom: 25px;
 `;
 
 const INput = styled.input`
@@ -162,4 +195,23 @@ border-radius: 8px;
 color: #252930;
 border:1px solid rgba(0, 0, 0, 0.3);
 margin-left:8px;
+margin-top: 15px;
+margin-left: 77%;
+`;
+
+const DIV = styled.div`
+font-family:  'Poppins', sans-serif;
+line-height: 0.09px;
+text-align: initial;
+p{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+}
+a{
+    font-size: 10px;
+    line-height: 16px;
+    color: #9FA2B4;
+}
 `;

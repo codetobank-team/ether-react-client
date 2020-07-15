@@ -29,7 +29,8 @@ font-size: 20px;
 line-height: 50px;
 text-align: center;
 letter-spacing: 1px;
-color:#A4A6B3;
+color: #C41426;;
+text-align: start;
 `;
 
 export const Button = styled.button`
@@ -66,7 +67,7 @@ function Dashboard() {
                         <P>Available Balance</P>
                         <p> as at date</p>
                         <H2>N40,000</H2>
-                        <Button>Send</Button>
+                        {/* <Button>Send</Button> */}
                     </div>
 
                     <div className='dashboard-info'>

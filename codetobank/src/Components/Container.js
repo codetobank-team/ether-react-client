@@ -24,7 +24,8 @@ function Container(props) {
                     <img className='container-oneblock' src={OneBlock} />
                 </div>
                 <NavLink exact to='/app/dashboard'>
-                    <h3 className='side-bar'>Dashboard</h3>
+                {/* <span className="fa fa-pie-chart"></span */}
+                    <h3 className='side-bar' >Dashboard</h3>
                 </NavLink>
 
                 <NavLink exact to='/app/wallet'>
