@@ -1,9 +1,63 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import card from '../Images/card.png';
 import TopBar from '../Components/TopBar';
 import styled from 'styled-components';
 import Transaction from './Transactions';
 import {DIV}from '../Components/Wallet';
+import {connect} from 'react-redux';
+import {getTransactions} from '../Store/actionCreators';
+
+
+
+function Dashboard(props) {
+
+    useEffect(() => {
+        props.getTransactions();
+      }, []);
+    
+
+    return (
+        <section className='dashboard-section'>
+
+            <Header>
+                <P1>Dashboard</P1>
+                <TopBar />
+            </Header>
+
+
+
+            <div className='dashboard-content'>
+
+                <section className='dashboard-content-section'>
+                    <div className='dashboard-info'>
+                        <P>Available Balance</P>
+                        <p className='date-p'> as at date</p>
+                        <H2>N40,000</H2>
+                        
+
+                        <DIV>
+                            <p>Stay informed : COVID-19</p> <br />
+                            <a href='https://covid19.ncdc.gov.ng/' target='blank'>
+                                Get the latest information from the NSCDC about the COVID-</a>
+                        </DIV>
+                    </div>
+
+                    <div className='dashboard-info'>
+                        <img className='card-img' src={card} alt='card' />
+                    </div>
+
+                </section>
+                <div>
+                    <P2>Transaction History</P2>
+                    <Transaction/>
+                </div>
+            </div>
+
+        </section>
+    )
+}
+
+export default connect(state => state, {getTransactions})(Dashboard);
 
 export const P = styled.p`
 font-family: 'Poppins', sans-serif;
@@ -54,60 +108,11 @@ margin-left:5px;
 `;
 
 export const Header = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 34px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 34px;
 `;
-
-
-function Dashboard() {
-    return (
-        <section className='dashboard-section'>
-
-            <Header>
-                <P1>Dashboard</P1>
-                <TopBar />
-            </Header>
-
-
-
-            <div className='dashboard-content'>
-
-                <section className='dashboard-content-section'>
-                    <div className='dashboard-info'>
-                        <P>Available Balance</P>
-                        <p className='date-p'> as at date</p>
-                        <H2>N40,000</H2>
-                        
-
-                        <DIV>
-                            <p>Stay informed : COVID-19</p> <br />
-                            <a href='https://covid19.ncdc.gov.ng/' target='blank'>
-                                Get the latest information from the NSCDC about the COVID-</a>
-                        </DIV>
-                    </div>
-
-                    <div className='dashboard-info'>
-                        <img className='card-img' src={card} alt='card' />
-                    </div>
-
-                </section>
-                <div>
-                    <P2>Transaction History</P2>
-                    <Transaction/>
-                </div>
-            </div>
-
-
-
-
-
-        </section>
-    )
-}
-
-export default Dashboard;
 
 const P2 = styled.p`
 font-family: 'Poppins', sans-serif;
