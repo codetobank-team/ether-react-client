@@ -11,6 +11,16 @@ function ReceiveModal(props) {
     }, []);
 
     const [closeModal, setCloseModal] = useState(false)
+    const [copiedAddress, setCopiedAddress] = useState(false);
+
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(props.walletDetails.address).then(function() {
+            setCopiedAddress(true);
+            setTimeout(() => setCopiedAddress(false), 2000);
+          }, function() {
+            console.error("Does not support error");
+          });
+    }
 
     return (
         <div className='modal'>
@@ -21,7 +31,7 @@ function ReceiveModal(props) {
 
                 <section style={{ display: 'flex' }}>
                     <Div>{props.walletDetails.address}</Div>
-                    <P3> <i class="fa fa-clone" aria-hidden="true"></i> Copy </P3>
+                    <P3 onClick={() => copyToClipboard()}> <i class="fa fa-clone" aria-hidden="true"></i>{copiedAddress ? 'Copied' : 'Copy'}</P3>
                 </section>
 
                 <DIv onClick={() => window.history.back()}>Cancel</DIv>
