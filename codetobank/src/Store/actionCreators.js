@@ -37,38 +37,51 @@ export const login = userData => dispatch => {
         });
 }
 
-export function postTransactions(request) {
+export function postTransactions(request, successCallback) {
     return function (dispatch) {
         axiosWithAuth().post(`${apiURL}/transactions/send`, request)
-            .then(res =>
+            .then(res => {
+                alert('Successful transaction')
+                successCallback();
+
+                dispatch(getTransactions());
+                dispatch(getWalletDetails());
                 dispatch({
                     type: types.TRANSACTION_SUCCESS,
-                    payload: res.data
-                })
-            )
-            .catch(error =>
-                dispatch({
-                    type: types.TRANSACTION_FAILURE,
-                    payload: error
-                })
-            );
-    };
-}
-
-export function getTransactions() {
-    let userData = JSON.parse(localStorage.getItem('user'))
-    return function (dispatch) {
-        axiosWithAuth().get(`${apiURL}/transactions/${userData.data.id}`)
-            .then(res => {
-                console.log(res)
-                dispatch({
-                    type: types.GET_TRANSACTION_SUCCESS,
                     payload: res.data
                 })
             }
             )
             .catch(error => {
-                if(error.response.status === 401){
+                if (error.response && (error.response.status === 401 || error.response.status === 500)) {
+                    localStorage.removeItem('user')
+                    localStorage.removeItem('token')
+                    history.push("/login")
+                }
+                dispatch({
+                    type: types.TRANSACTION_FAILURE,
+                    payload: error
+                })
+            }
+            );
+    };
+}
+
+
+export function getTransactions() {
+    let userData = JSON.parse(localStorage.getItem('user'))
+    return function (dispatch) {
+        axiosWithAuth().get(`${apiURL}/transactions`)
+            .then(res => {
+                console.log(res)
+                dispatch({
+                    type: types.GET_TRANSACTION_SUCCESS,
+                    payload: res.data.data || []
+                })
+            } 
+            )
+            .catch(error => {
+                if (error.response && (error.response.status === 401 || error.response.status === 500)) {
                     localStorage.removeItem('user')
                     localStorage.removeItem('token')
                     history.push("/login")
@@ -76,6 +89,34 @@ export function getTransactions() {
                 console.log(error.response)
                 dispatch({
                     type: types.GET_TRANSACTION_FAILURE,
+                    payload: error
+                })
+            }
+            );
+    };
+}
+
+export function getWalletDetails() {
+    // let userData = JSON.parse(localStorage.getItem('user'))
+    return function (dispatch) {
+        axiosWithAuth().get(`${apiURL}/user/wallet/`)
+            .then(res => {
+                console.log(res)
+                dispatch({
+                    type: types.GET_WALLET_DETAILS_SUCCESS,
+                    payload: res.data.data
+                })
+            }
+            )
+            .catch(error => {
+                if (error.response && (error.response.status === 401 || error.response.status === 500)) {
+                    localStorage.removeItem('user')
+                    localStorage.removeItem('token')
+                    history.push("/login")
+                }
+                console.log(error.response)
+                dispatch({
+                    type: types.GET_WALLET_DETAILS_FAILURE,
                     payload: error
                 })
             }
