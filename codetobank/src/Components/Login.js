@@ -41,7 +41,7 @@ function Login(props) {
                             <Form>
                                 <div className='imgDiv'>
 
-                                    <img className='ellipse' src={Ellipse} />
+                                    {/* <img className='ellipse' src={Ellipse} /> */}
 
                                     <img className='oneblock' src={OneBlock} />
                                 </div>

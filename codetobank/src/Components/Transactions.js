@@ -34,7 +34,7 @@ align-items: center;
 const P3 = styled.p`
     font-family: 'Poppins',sans-serif;
     /* margin: 15px; */
-    text-align: left;\
+    text-align: left;
     line-height: 19px;
 
     /* line-height: 2px; */
