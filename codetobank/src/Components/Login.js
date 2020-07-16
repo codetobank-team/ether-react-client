@@ -62,7 +62,7 @@ function Login(props) {
 
                                 <button className='submit' type='submit'>Login</button>
 
-                                <p className='login-p2'>New to OneBlock?
+                                <p className='bottom-p-text'>New to OneBlock?
                                     <Link to="/"><p style={{color:'red'}}>Sign up here</p>
                                     </Link>
                                 </p>
