@@ -10,7 +10,17 @@ function ReceiveModal(props) {
         props.getWalletDetails()
     }, []);
 
-    
+    const [closeModal, setCloseModal] = useState(false)
+    const [copiedAddress, setCopiedAddress] = useState(false);
+
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(props.walletDetails.address).then(function() {
+            setCopiedAddress(true);
+            setTimeout(() => setCopiedAddress(false), 2000);
+          }, function() {
+            console.error("Does not support error");
+          });
+    }
 
     return (
         <div className='modal'>
@@ -21,7 +31,7 @@ function ReceiveModal(props) {
 
                 <section style={{ display: 'flex' }}>
                     <Div>{props.walletDetails.address}</Div>
-                    <P3> <i class="fa fa-clone" aria-hidden="true"></i> Copy </P3>
+                    <P3 onClick={() => copyToClipboard()}> <i class="fa fa-clone" aria-hidden="true"></i>{copiedAddress ? 'Copied' : 'Copy'}</P3>
                 </section>
 
                 <DIv onClick={props.modal} >Cancel</DIv>
@@ -94,6 +104,10 @@ color: #FFFFFF;
 background: #3D8A86;
 border: 1px solid #3D8A86;
 border-radius: 0px 2px 2px 0px;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const DIv = styled.button`
