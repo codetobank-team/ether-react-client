@@ -2,6 +2,8 @@ import * as types from './actionTypes';
 import axios from 'axios';
 import { history } from '../App';
 import { axiosWithAuth } from '../axiosWithAuth';
+ 
+
 // import {axiosWithAuth}  from '../axiosWithAuth';
 
 export const apiURL = 'http://oneblockdev.ddns.net/api';
@@ -43,7 +45,6 @@ export function postTransactions(request, successCallback) {
             .then(res => {
                 alert('Successful transaction')
                 successCallback();
-
                 dispatch(getTransactions());
                 dispatch(getWalletDetails());
                 dispatch({
