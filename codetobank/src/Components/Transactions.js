@@ -9,12 +9,13 @@ const Div = styled.div`
 `;
 
 const Div1 = styled.div`
-  border: 1px solid #e5e5e5;
-  border-radius: 16px;
-  width: 32px;
+   width: 32px;
   height: 32px;
   line-height: 32px;
-  background: #e5e5e5;
+  background: #ffffff;
+  text-align: center;
+  color:#949494;
+  font-size:12px
 `;
 
 const MiniDiv = styled.div`
@@ -62,7 +63,7 @@ function Transaction(props) {
                 if(transaction.type === 'sent') sign = '-'
                 return (
                     <Div>
-                        <Div1>TH</Div1>
+                        <Div1><i class="fa fa-arrow-down" aria-hidden="true"></i></Div1>
 
                         <MiniDiv>
 
