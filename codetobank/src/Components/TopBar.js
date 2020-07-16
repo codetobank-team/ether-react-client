@@ -35,10 +35,10 @@ font-family: 'Poppins', sans-serif;
 `;
 
 
-function TopBar({ name }) {
+function TopBar( props) {
   return (
     <Div>
-    <P>Hello, Damilola </P>
+    <P>Hello, {props.user.data.firstName} {props.user.data.lastName}</P>
 
               <Img src={man}/>
   
