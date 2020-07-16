@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: seyio/etherbank-frontend
         path: codetobank
-        dockerfile: codetobank/Dockerfile
+        dockerfile: codetobank/Dockerfile.dev
         tags: latest, ${{ steps.slug.outputs.sha8 }}
     - uses: imranismail/setup-kustomize@v1
       with:
