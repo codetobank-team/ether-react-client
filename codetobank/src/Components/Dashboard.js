@@ -116,6 +116,10 @@ border: #3D8A86;
 font-weight:500;
 cursor:pointer;
 font-family: 'Poppins',sans-serif;
+:hover{
+    background:white ;
+    color:#3D8A86;
+}
 `
 export const WhiteButton = styled.button`
 width: 100px;
@@ -128,6 +132,10 @@ border: 1px solid #3D8A86;
 margin-left:5px;
 font-weight:500;
 font-family: 'Poppins',sans-serif;
+:hover{
+    background: #3D8A86;
+    color:white;
+}
 `;
 
 export const Header = styled.div`

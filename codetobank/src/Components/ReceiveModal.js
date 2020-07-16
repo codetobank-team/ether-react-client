@@ -10,7 +10,7 @@ function ReceiveModal(props) {
         props.getWalletDetails()
     }, []);
 
-    const [closeModal, setCloseModal] = useState(false)
+    
 
     return (
         <div className='modal'>
@@ -24,7 +24,7 @@ function ReceiveModal(props) {
                     <P3> <i class="fa fa-clone" aria-hidden="true"></i> Copy </P3>
                 </section>
 
-                <DIv >Cancel</DIv>
+                <DIv onClick={props.modal} >Cancel</DIv>
 
 
             </div>
@@ -49,6 +49,7 @@ font-size: 19px;
 line-height: 28px;
 letter-spacing: 0.4px;
 border-bottom: 1px solid #C4C4C4;
+padding-bottom: 10px;
 `;
 
 const P2 = styled.p`
@@ -70,10 +71,13 @@ const Img = styled.img`
   
 `;
 
-const Div = styled.button`
+const Div = styled.div`
 font-family: "Poppins", sans-serif;
 width: 281px;
 background:#FFFFFF;
+display: flex;
+align-items: center;
+padding-left: 11px;
 height: 50px;
 border: 1px solid rgba(0, 0, 0, 0.15);
 border-radius: 2px 0px 0px 2px;
@@ -102,4 +106,5 @@ border: 1px solid rgba(0, 0, 0, 0.15);
 border-radius: 2px;
 color: #FFFFFF;
 margin-top: 30px;
+cursor: pointer;
 `;

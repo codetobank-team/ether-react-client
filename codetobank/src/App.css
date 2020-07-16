@@ -14,14 +14,14 @@
   }
 }
 
-.bottom-p-text{
+.bottom-p-text {
   color: rgb(144, 144, 144);
   font-family: "Poppins", sans-serif;
   /* font-style: normal; */
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .App-header {
@@ -98,11 +98,11 @@
 
 .date-p {
   font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 16px;
-letter-spacing: 0.1px;
-color: #9FA2B4;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1px;
+  color: #9fa2b4;
 }
 .container-ellipse {
   /* width: 50px; */
@@ -142,7 +142,7 @@ color: #9FA2B4;
   max-width: 307px;
   font-size: 13px;
   /* line-height: 21px; */
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .inputs {
@@ -170,6 +170,12 @@ color: #9FA2B4;
   font-size: 14px;
   /* padding: 0.25em 1em; */
   margin-top: 20px;
+  cursor: pointer;
+}
+
+.submit :hover {
+  background: #ffffff;
+  color: #c41426;
 }
 
 .container {
@@ -208,15 +214,14 @@ a {
   padding-left: 30px;
   text-align: initial;
   padding-top: 50px;
-  padding-right:28px
+  padding-right: 28px;
 }
 
 .dashboard-content-section {
   display: flex;
   justify-content: space-between;
-  
 }
-:focus{
+:focus {
   outline: none !important;
 }
 .card-img {
@@ -224,7 +229,7 @@ a {
   height: 230px;
 }
 
-.card-text{
+.card-text {
   position: absolute;
   color: white;
   bottom: 60px;
@@ -243,7 +248,7 @@ a {
   text-align: left;
 }
 
-.side-bar i{
+.side-bar i {
   margin-right: 24px;
 }
 /* .side-bar :hover{
@@ -258,17 +263,16 @@ a.active .side-bar {
   border-left: 3px solid #c41426;
 }
 
+@media (min-width: 468px) and (max-width: 768px) {
+  .reg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-@media (min-width:468px) and (max-width:768px) {
- .reg-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
- }
-
- .card-img{
-   display:none;
- }
+  .card-img {
+    display: none;
+  }
 }
 
 @media (max-width: 468px) {
@@ -282,10 +286,7 @@ a.active .side-bar {
   }
 }
 
-
-
 /* modal styles */
-
 
 .edit-form {
   background: white;
@@ -294,8 +295,8 @@ a.active .side-bar {
   margin-top: 30px;
   border-radius: 10px;
   width: 421px;
-    /* height: 562px; */
-    margin: auto;
+  /* height: 562px; */
+  margin: auto;
 }
 
 .edit-form .header {
@@ -310,4 +311,5 @@ a.active .side-bar {
   top: 0px;
   left: 0px;
   z-index: 1000;
+  padding-top: 100px;
 }

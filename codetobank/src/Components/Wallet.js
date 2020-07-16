@@ -26,6 +26,10 @@ function Wallet(props) {
     const [referenceNote, setReferenceNote] = useState('');
     const [showReceiveModal, setShowReceiveModal] = useState(false);
 
+    const modal = () => {
+        setShowReceiveModal(false)
+    }
+
     const onRecieverAccountIDChange = event => {
         setRecieverAccountID(event.target.value)
     }
@@ -139,7 +143,7 @@ function Wallet(props) {
                 )}
 
                 {showReceiveModal && (
-                    <ReceiveModal />
+                    <ReceiveModal modal={modal} />
                 )}
 
             </div>
