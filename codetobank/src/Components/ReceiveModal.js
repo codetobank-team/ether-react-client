@@ -24,7 +24,7 @@ function ReceiveModal(props) {
                     <P3> <i class="fa fa-clone" aria-hidden="true"></i> Copy </P3>
                 </section>
 
-                <DIv>Go Back</DIv>
+                <DIv >Cancel</DIv>
 
 
             </div>
