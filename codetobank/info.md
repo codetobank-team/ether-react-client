@@ -25,7 +25,7 @@ This shows the ui of a blockchain application that would enable transfers betwee
 ### Styling Libraries
 
 * Styled comoponents
-* Material ui
+
 
 ### others
 * Formik

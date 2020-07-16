@@ -11,6 +11,16 @@ function ReceiveModal(props) {
     }, []);
 
     const [closeModal, setCloseModal] = useState(false)
+    const [copiedAddress, setCopiedAddress] = useState(false);
+
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(props.walletDetails.address).then(function() {
+            setCopiedAddress(true);
+            setTimeout(() => setCopiedAddress(false), 2000);
+          }, function() {
+            console.error("Does not support error");
+          });
+    }
 
     return (
         <div className='modal'>
@@ -21,10 +31,10 @@ function ReceiveModal(props) {
 
                 <section style={{ display: 'flex' }}>
                     <Div>{props.walletDetails.address}</Div>
-                    <P3> <i class="fa fa-clone" aria-hidden="true"></i> Copy </P3>
+                    <P3 onClick={() => copyToClipboard()}> <i class="fa fa-clone" aria-hidden="true"></i>{copiedAddress ? 'Copied' : 'Copy'}</P3>
                 </section>
 
-                <DIv>Go Back</DIv>
+                <DIv onClick={props.modal} >Cancel</DIv>
 
 
             </div>
@@ -49,6 +59,7 @@ font-size: 19px;
 line-height: 28px;
 letter-spacing: 0.4px;
 border-bottom: 1px solid #C4C4C4;
+padding-bottom: 10px;
 `;
 
 const P2 = styled.p`
@@ -70,10 +81,13 @@ const Img = styled.img`
   
 `;
 
-const Div = styled.button`
+const Div = styled.div`
 font-family: "Poppins", sans-serif;
 width: 281px;
 background:#FFFFFF;
+display: flex;
+align-items: center;
+padding-left: 11px;
 height: 50px;
 border: 1px solid rgba(0, 0, 0, 0.15);
 border-radius: 2px 0px 0px 2px;
@@ -90,6 +104,10 @@ color: #FFFFFF;
 background: #3D8A86;
 border: 1px solid #3D8A86;
 border-radius: 0px 2px 2px 0px;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const DIv = styled.button`
@@ -102,4 +120,5 @@ border: 1px solid rgba(0, 0, 0, 0.15);
 border-radius: 2px;
 color: #FFFFFF;
 margin-top: 30px;
+cursor: pointer;
 `;

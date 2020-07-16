@@ -21,7 +21,7 @@ function Transaction(props) {
 
                             </div>
 
-                            <p className='amount' style={{color:transaction.type === 'sent'?"red":"green"}}> {sign} N{transaction.amount}</p>
+                            <p className='amount' style={{color:transaction.type === 'sent'?"#BC484B":"#00BDAA;"}}> {sign} N{transaction.amount}</p>
                         </MiniDiv>
 
                     </Div>
