@@ -10,9 +10,9 @@ function ReceiveModal(props) {
         props.getWalletDetails()
     }, []);
 
-    const [closeModal, setCloseModal] = useState(false)
     const [copiedAddress, setCopiedAddress] = useState(false);
 
+    // this
     const copyToClipboard = () => {
         navigator.clipboard.writeText(props.walletDetails.address).then(function() {
             setCopiedAddress(true);
