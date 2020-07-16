@@ -34,7 +34,7 @@ function ReceiveModal(props) {
                     <P3 onClick={() => copyToClipboard()}> <i class="fa fa-clone" aria-hidden="true"></i>{copiedAddress ? 'Copied' : 'Copy'}</P3>
                 </section>
 
-                <DIv onClick={() => window.history.back()}>Cancel</DIv>
+                <DIv>Cancel</DIv>
 
 
             </div>
