@@ -1,4 +1,4 @@
-name: Argo CI Pipeline
+name: Argo CI Pipeline Prod
 
 on:
   push:
