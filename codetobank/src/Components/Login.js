@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../Store/actionCreators';
@@ -15,6 +15,7 @@ const initialState = {
 
 function Login(props) {
 
+  
     const validation = Yup.object().shape({
         email: Yup.string()
             .email('Email not valid')
@@ -42,7 +43,7 @@ function Login(props) {
                                 <div className='imgDiv'>
 
                                 <img className='oneblock' src={OneBlock} />
-                                
+
                                 </div>
 
                                 <h2 className='h2-text'>Welcome to OneBlock</h2>

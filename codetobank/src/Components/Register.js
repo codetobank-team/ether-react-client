@@ -20,6 +20,7 @@ const initialState = {
 
 function Register(props) {
 
+    
     const validation = Yup.object().shape({
         email: Yup.string()
             .email('Email not valid')

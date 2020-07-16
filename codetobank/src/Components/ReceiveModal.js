@@ -67,6 +67,7 @@ const Img = styled.img`
     margin-left: 90px;
     margin-bottom: 30px;
     margin-top: 30px;
+  
 `;
 
 const Div = styled.button`
