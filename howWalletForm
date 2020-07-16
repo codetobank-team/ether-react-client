@@ -1,0 +1,438 @@
+[33mcommit 052a36878e19e1fedcd76f060a0160ac34b95969[m[33m ([m[1;36mHEAD -> [m[1;32mcontainer-ft[m[33m, [m[1;31morigin/container-ft[m[33m)[m
+Merge: eda4df4 11431c1
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Thu Jul 16 00:01:14 2020 +0100
+
+    Merge branch 'develop' of https://github.com/codetobank-team/ether-react-client into container-ft
+
+[33mcommit 11431c11fc8d3f132f0d1bf5b65e9980c258b8b7[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: lexyd <destinyihejirika@gmail.com>
+Date:   Wed Jul 15 23:51:18 2020 +0100
+
+    Updated the logo, and fixed flex for the input
+
+[33mcommit eda4df42c9dfa492504c222089ccea0bb2529f47[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 23:46:07 2020 +0100
+
+    added get transaction action types
+
+[33mcommit 7aa9fd7bc45c7a681cd86b8e03d366ccb0145317[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 23:45:45 2020 +0100
+
+    added action  reators for get transaction and post transaction
+
+[33mcommit 52e22945e4501100ebbf22e5ded8df0bdc4457e3[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 23:45:17 2020 +0100
+
+    added conditional rendering to the wallet
+
+[33mcommit 6c4332d17901b6dce99879c87cf736cb0b09b9c5[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 23:44:17 2020 +0100
+
+    added name to the head tag
+
+[33mcommit 2ce6c1fba2ac9817d6d43875cca539cc74fdc030[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 23:41:41 2020 +0100
+
+    added useffect
+
+[33mcommit ed7c77670f0fd99646bac429d306ca6bed394160[m
+Merge: 8189103 4f59245
+Author: Damilola <53811636+Damilolawumi@users.noreply.github.com>
+Date:   Wed Jul 15 21:04:15 2020 +0100
+
+    Merge pull request #7 from codetobank-team/container-ft
+    
+    Container ft
+
+[33mcommit 4f5924500b081ca3d33fcaefa507e00a242767af[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 21:01:31 2020 +0100
+
+    added protected routes to the app
+
+[33mcommit a7e012d511146612c2fd88362c64b6a5b5fca4f0[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 19:59:25 2020 +0100
+
+    few changes made
+
+[33mcommit ac2ec1564b6e4cff1444a5f86a6afe2edfaa12fc[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 14:35:31 2020 +0100
+
+    worked on wallet page and removed unused code
+
+[33mcommit fc56c1d156b89dd639cde7ef09909a3a068f0b3f[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 03:50:49 2020 +0100
+
+    consumed api for post transaction
+
+[33mcommit 8189103f9cd9e2b604d046f7bc1049e084466c38[m
+Merge: 074b1d9 ff10064
+Author: Damilola <53811636+Damilolawumi@users.noreply.github.com>
+Date:   Wed Jul 15 01:29:27 2020 +0100
+
+    Merge pull request #6 from codetobank-team/container-ft
+    
+    Container ft
+
+[33mcommit ff10064c4248202dd08aec4dbc5e337b57f73837[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 01:28:35 2020 +0100
+
+    wip
+
+[33mcommit e73996c27213acfc00786140836b7d8ed944adbd[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Wed Jul 15 01:28:21 2020 +0100
+
+    styling
+
+[33mcommit e993bb90ccea10ae258211d5bc86a4c487e62c3f[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 16:43:59 2020 +0100
+
+    setup the container component
+
+[33mcommit 074b1d9435c922fcd4f9999ab0087e182fab7da7[m
+Merge: e9f219f d1d2cee
+Author: Damilola <53811636+Damilolawumi@users.noreply.github.com>
+Date:   Tue Jul 14 16:14:32 2020 +0100
+
+    Merge pull request #5 from codetobank-team/login-styles
+    
+    Login styles
+
+[33mcommit d1d2cee70ced38ebc705ccd599e72135bc52d66e[m[33m ([m[1;31morigin/login-styles[m[33m, [m[1;32mlogin-styles[m[33m)[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 16:09:51 2020 +0100
+
+    bug fixed
+
+[33mcommit 8506cc01282c9c87cfac9dbe9d7c336730b0413a[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 16:08:42 2020 +0100
+
+    matched styles to design
+
+[33mcommit 104db070b1b85cb785cf072a6a0139f0e6bfa039[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 16:08:12 2020 +0100
+
+    created new components for the dashboard
+
+[33mcommit e130078e51ae0afd7ff7e26764ed69e03be81e66[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 16:07:31 2020 +0100
+
+    added reset code
+
+[33mcommit 68b709df211e8f9dd922aa27ee4a5b35a96959b6[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 16:07:17 2020 +0100
+
+    wip
+
+[33mcommit 516e0b871d77280f4b9d98fd1a4f45e6e6b2a282[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 16:07:03 2020 +0100
+
+    added font family
+
+[33mcommit 6c51f3fe0666f2fcbff849997916bd481f236d89[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 14:37:37 2020 +0100
+
+    changes made
+
+[33mcommit 448f28f58128346066c5cb54a4d32ba982f218f7[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 14:15:09 2020 +0100
+
+    added media queries
+
+[33mcommit e9f219ffb01a4d728d08c7cf753c2fb4cebf507e[m
+Merge: 510d210 11f32b6
+Author: Damilola <53811636+Damilolawumi@users.noreply.github.com>
+Date:   Tue Jul 14 13:26:51 2020 +0100
+
+    Merge pull request #4 from codetobank-team/dashboard-ft
+    
+    Dashboard ft
+
+[33mcommit 11f32b6db2b5c1053fa23db0101a396bfaa85ec1[m[33m ([m[1;31morigin/dashboard-ft[m[33m, [m[1;32mdashboard-ft[m[33m)[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 13:25:49 2020 +0100
+
+    added styles for register
+
+[33mcommit f3531177a7b387c6ac654f55ef549ecda391317a[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 13:25:01 2020 +0100
+
+    added font family
+
+[33mcommit d084cc5c8dbf6b8f39e3fa5bd975deb035d42d0b[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 13:12:36 2020 +0100
+
+    wip
+
+[33mcommit 5ce8d56219135a35e00b4a1d38ec196e1a4c9014[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 13:11:53 2020 +0100
+
+    deleted unused code
+
+[33mcommit a3252cc8f98eb091d52a0513220bff8a2ed18138[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Tue Jul 14 13:11:16 2020 +0100
+
+    added some styles to the register page
+
+[33mcommit f53e630a4d8bb806ba4a937fd9f032306d4d1354[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Mon Jul 13 20:44:02 2020 +0100
+
+    wip
+
+[33mcommit eeea0515de4e5c0c8b9a4ef9b3cf920d266a1991[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Mon Jul 13 20:43:50 2020 +0100
+
+    added more input fiels for register page
+
+[33mcommit 510d210042dd3ad358ce5aeaa1a8278a986e1277[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 21:23:09 2020 +0200
+
+    added kustomize action
+
+[33mcommit 00aa3a9439459d02397202b49c1d2831bc8c8b4b[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 21:08:57 2020 +0200
+
+    add github dockerpush action
+
+[33mcommit 619e7955c87d08aaa5c64b896fc498e9752c6d10[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 21:01:18 2020 +0200
+
+    ref stage build context
+
+[33mcommit d6221ea9639ce97ba10f1fcf6583f99502279a49[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 20:49:37 2020 +0200
+
+    ref stage build context
+
+[33mcommit 60f181e21d7b161524a6c43383f54ebad83fc070[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 20:42:54 2020 +0200
+
+    ref stage build context
+
+[33mcommit 10341ffe0ce7e0e9746916971fd05e747c15bedd[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 20:36:44 2020 +0200
+
+    create stage ci file
+
+[33mcommit d38c1a7762630289cb8798782b1ee1aee248ba30[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 20:23:03 2020 +0200
+
+    added dev branch build
+
+[33mcommit 3095bf46c3776ef66d4143e238f93020faa390ab[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 20:21:31 2020 +0200
+
+    added dev branch build
+
+[33mcommit 1f29acda467b6a1a27b76b753e577e2b597de881[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Mon Jul 13 20:18:19 2020 +0200
+
+    added dev branch build
+
+[33mcommit dddc4eb295d2d9b59a33d668583f9e6dbf0c4075[m
+Merge: 1fbf9c3 0102d21
+Author: Damilola <53811636+Damilolawumi@users.noreply.github.com>
+Date:   Mon Jul 13 18:46:52 2020 +0100
+
+    Merge pull request #2 from codetobank-team/signup-login-ft
+    
+    wip
+
+[33mcommit 0102d2129042526b99d0e93c0e3d743ef7bf5efc[m[33m ([m[1;31morigin/signup-login-ft[m[33m, [m[1;32msignup-login-ft[m[33m)[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Mon Jul 13 18:46:10 2020 +0100
+
+    minor documentations
+
+[33mcommit fec21e902972c7db912d7dae1cf8e53c586679ab[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Mon Jul 13 17:56:18 2020 +0100
+
+    wip
+
+[33mcommit b50378c8c2e83e334f190b6c221136b138fa9f58[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Mon Jul 13 17:56:05 2020 +0100
+
+    minor change made
+
+[33mcommit 72aa6de17ce8e15403f5c06e955ed3a4a2166d44[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Mon Jul 13 17:55:47 2020 +0100
+
+    added protected routes
+
+[33mcommit 1fbf9c3d0eff7e62758c42b303166edeb6687818[m
+Merge: 2e0cc64 5cefe60
+Author: Damilola <53811636+Damilolawumi@users.noreply.github.com>
+Date:   Sun Jul 12 23:00:14 2020 +0100
+
+    Merge pull request #1 from codetobank-team/signup-login-ft
+    
+    setup and connected app to redux
+
+[33mcommit 5cefe6032f4e6b51f688a28ce6c14708e8f6f73c[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:58:33 2020 +0100
+
+    minor changes made
+
+[33mcommit 6943502a9e30c956e122df5bcdc438f86165f788[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:58:17 2020 +0100
+
+    setup and connected login to redux
+
+[33mcommit 94d4ff68eb4a99d4d41895bc61114f72f63ea099[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:57:56 2020 +0100
+
+    setup component
+
+[33mcommit ddf981f6795405b7632335f0600028e81e7a8a36[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:57:38 2020 +0100
+
+    imported reducer
+
+[33mcommit 5db9ff593b45259b9401fa8e9a3d1c6ae53694a2[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:57:18 2020 +0100
+
+    connected to redux
+
+[33mcommit 453a3769f0b93341890b5d39abc62823a4a1beab[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:39:01 2020 +0100
+
+    setup register component and connected to redux
+
+[33mcommit 17e115f8b7c664cec45b5adab06a1b2dbd1ab47c[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:06:05 2020 +0100
+
+    appreducer setup
+
+[33mcommit ec60f00b99dd3a7bfc1d40ace6c6be25eee80a0e[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:05:39 2020 +0100
+
+    added thunk and created store
+
+[33mcommit d23a69ea6b03298e9882790842ffc79fea68e322[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:05:12 2020 +0100
+
+    added the authentication reducers
+
+[33mcommit 0685b4337bd0b78d62b237a5d5fcac7d47352598[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:04:53 2020 +0100
+
+    added auth action creators
+
+[33mcommit 1ae2eb6412f6e0ea2fadd55ba4669dc9fbefe9f8[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:04:37 2020 +0100
+
+    created action types
+
+[33mcommit c89cb7c04764514f8ddcc20a662c69af18346e68[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:04:15 2020 +0100
+
+    installed dev dependencies
+
+[33mcommit de3fa8a14a077c3e4ce2f21e0b1dbaa4fc8cdd1f[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 22:03:47 2020 +0100
+
+    moved files
+
+[33mcommit 76672d4c40813b1a5b56f794d431ec7eac9e15f7[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 19:44:34 2020 +0100
+
+    created axios withauth comonent
+
+[33mcommit 3d110b5fbb775329b5df6a2154a230881fce9661[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sun Jul 12 19:40:23 2020 +0100
+
+    installed dependencies for redux
+
+[33mcommit 2e0cc6438204c1c8ba5b3f7c98b2131fff230d7a[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Sat Jul 11 18:47:07 2020 +0200
+
+    added .dockerignore
+
+[33mcommit d492da780eca119f0387a476c8e4d602caa75352[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Sat Jul 11 18:46:06 2020 +0200
+
+    added docker setup
+
+[33mcommit c75e4f6b17504f5fa76b439c43b604a496dfa3e4[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sat Jul 11 13:47:26 2020 +0100
+
+    created register component
+
+[33mcommit 62b174bf8b9c6de69d61953bd2cb8ed5cb621cb3[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sat Jul 11 13:47:08 2020 +0100
+
+    created login component
+
+[33mcommit 6bd8366853507674fff56856dc7a1dca521605d5[m[33m ([m[1;32mdevelop[m[33m)[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sat Jul 11 13:43:22 2020 +0100
+
+    deleted unused code
+
+[33mcommit d2b390c733e9e7295e33065cf2ee5010d1f5e0dc[m
+Author: damilola.olawumi <damilola_olawumi@yahoo.com>
+Date:   Sat Jul 11 13:40:47 2020 +0100
+
+    created react app
+
+[33mcommit f59477f4de5a82609b8415fac5cd21cda3b61261[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: seyio91 <seyi_obaweya@yahoo.com>
+Date:   Fri Jul 10 20:51:52 2020 +0200
+
+    first commit
