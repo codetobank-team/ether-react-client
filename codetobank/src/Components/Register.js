@@ -45,10 +45,7 @@ function Register(props) {
                         return (
                             <Form>
                                 <div className='imgDiv'>
-
-                                    {/* <img className='ellipse' src={Ellipse} /> */}
-
-                                    <img className='oneblock' src={OneBlock} />
+                                 <img className='oneblock' src={OneBlock} />
                                 </div>
 
                                 <h2 className='h2-text'>Create Account</h2>

@@ -2,7 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import avatar from '../Images/avatar.png';
 
-// import { Div, H2, P } from "../styles/TopBarStyles";
+
+function TopBar(props) {
+  return (
+    <Div>
+      <P>Hello, {props.user.data.firstName} {props.user.data.lastName}</P>
+
+      <Img src={avatar} />
+
+    </Div>
+  );
+}
+
+export default TopBar;
+
 
 export const Div = styled.div`
   display: flex;
@@ -33,17 +46,3 @@ font-family: 'Poppins', sans-serif;
   font-weight: 500;
   color: #000000;
 `;
-
-
-function TopBar( props) {
-  return (
-    <Div>
-    <P>Hello, {props.user.data.firstName} {props.user.data.lastName}</P>
-
-              <Img src={avatar}/>
-  
-    </Div>
-  );
-}
-
-export default TopBar;

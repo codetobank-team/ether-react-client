@@ -131,14 +131,9 @@ function Wallet(props) {
                                         <i class="fa fa-paper-plane" aria-hidden="true"></i> Send</Button>
                                 </ButtonDiv>
 
-
-
                             </div>
 
-
                         </Div>
-
-
 
                     </div>
                 )}
@@ -147,15 +142,7 @@ function Wallet(props) {
                     <ReceiveModal />
                 )}
 
-
-                {/* <div>
-                    <p>Transaction History</p>
-                </div> */}
             </div>
-
-
-
-
 
         </section>
     )
@@ -172,15 +159,12 @@ export default connect(mapStateToProps, { postTransactions, getWalletDetails, ge
 const Div = styled.div`
 display:flex;
 margin-top: 60px;
-/* justify-content:space-between; */
 flex-wrap: wrap;
 padding-right:50px;
-/* border: 1px solid #C41426; */
 p{
-    /* font-style: normal; */
+
 font-weight: 500;
 font-size: 17px;
-/* line-height: 28px; */
 letter-spacing: 0.4px;
 color: #252733;
 text-align: left;
@@ -193,8 +177,6 @@ text-align: left;
 const ButtonDiv = styled.div`
 display:flex;
 justify-content: flex-end;
-/* justify-content: flex-end; */
-/* padding-right:50px; */
 `;
 
 const Input = styled.input`
@@ -245,7 +227,6 @@ export const DIV = styled.div`
     border: 1px solid #C41426;
     margin-bottom: 10px;
     border-radius: 5px;
-    /* padding: 5px; */
     height: 52px;
     display: flex;
     align-items:center;
