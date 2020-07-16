@@ -7,6 +7,7 @@ import John from '../Images/Team/John.jpeg';
 import Kelechi from '../Images/Team/Kelechi.jpeg';
 import Oye from '../Images/Team/Oye.jpeg';
 import Sammy from '../Images/Team/Sammy.jpeg';
+import Seyi from '../Images/Team/Seyi.jpeg';
 
 
 
@@ -125,6 +126,13 @@ function AboutUs() {
                     <Img src={Oye} alt="Oye.jepg" />
                     <H6>Oyekunle</H6>
                     <P>Backend Developer</P>
+                    
+                </Div>
+
+                <Div>
+                    <Img src={Seyi} alt="Seyi.jepg" />
+                    <H6>Seyi Obaweya</H6>
+                    <P>DevOps Engineer</P>
                     
                 </Div>
             </Section>
