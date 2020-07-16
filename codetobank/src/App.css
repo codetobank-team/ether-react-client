@@ -274,10 +274,13 @@ a.active .side-bar {
 
 .edit-form {
   background: white;
-  padding: 20px;
+  padding: 15px;
   opacity: 1;
   margin-top: 30px;
   border-radius: 10px;
+  width: 421px;
+    /* height: 562px; */
+    margin: auto;
 }
 
 .edit-form .header {
