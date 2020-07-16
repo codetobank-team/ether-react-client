@@ -24,7 +24,7 @@ function ReceiveModal(props) {
                     <P3> <i class="fa fa-clone" aria-hidden="true"></i> Copy </P3>
                 </section>
 
-                <DIv >Cancel</DIv>
+                <DIv onClick={() => window.history.back()}>Cancel</DIv>
 
 
             </div>
@@ -90,6 +90,10 @@ color: #FFFFFF;
 background: #3D8A86;
 border: 1px solid #3D8A86;
 border-radius: 0px 2px 2px 0px;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const DIv = styled.button`
@@ -102,4 +106,8 @@ border: 1px solid rgba(0, 0, 0, 0.15);
 border-radius: 2px;
 color: #FFFFFF;
 margin-top: 30px;
+
+&:hover {
+    cursor: pointer;
+}
 `;
