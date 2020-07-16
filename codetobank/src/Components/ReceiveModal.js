@@ -10,7 +10,6 @@ function ReceiveModal(props) {
         props.getWalletDetails()
     }, []);
 
-    const [closeModal, setCloseModal] = useState(false)
     const [copiedAddress, setCopiedAddress] = useState(false);
 
     // this
