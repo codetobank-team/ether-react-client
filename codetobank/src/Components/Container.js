@@ -5,6 +5,9 @@ import Wallet from '../Components/Wallet';
 import Transactions from '../Components/Transactions';
 import Ellipse from '../Images/Ellipse.png';
 import OneBlock from '../Images/OneBlock.png';
+import dashboard from '../Images/dashboard.svg';
+import walletfocus from '../Images/walletfocus.svg';
+import exit from '../Images/exit.svg';
 
 
 function Container(props) {
@@ -21,7 +24,7 @@ function Container(props) {
                 <div className='dashboard-logo'>
                     <img className='container-ellipse' src={Ellipse} />
 
-                    <img className='container-oneblock' src={OneBlock} />
+                    {/* <img className='container-oneblock' src={OneBlock} /> */}
                 </div>
                 <NavLink exact to='/app/dashboard'>
                

@@ -18,8 +18,8 @@ function App() {
       <Router history={history}>
         <Route exact path='/' component={Register} />
         <Route exact path='/login' component={Login} />
-        {/* <Route path='/app' component={Container} /> */}
-        <Route path='/app' render={props => authCheck(Container, props)} />
+        <Route path='/app' component={Container} />
+        {/* <Route path='/app' render={props => authCheck(Container, props)} /> */}
       </Router>
     </div>
   );
