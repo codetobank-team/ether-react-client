@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 const Div = styled.div`
   display: flex;
-  margin-top: 25px;
-  line-height: 6px;
+  border-bottom: 1px solid rgba(118, 118, 118, 0.15);
+    padding-bottom: 15px;
+    padding-top: 10px;
 `;
 
 const Div1 = styled.div`
@@ -31,41 +32,54 @@ align-items: center;
 `;
 
 const P3 = styled.p`
-font-family: 'Poppins', sans-serif;
-margin: 15px;
-text-align: left;
-line-height: 2px;
-/* font-style: normal; */
-font-weight: normal;
+    font-family: 'Poppins',sans-serif;
+    /* margin: 15px; */
+    text-align: left;
+    line-height: 19px;
+
+    /* line-height: 2px; */
+    font-weight: normal;
+    margin-left: 16px;
 
 `;
 
 const P4 = styled.div`
- margin-left: 16px;
- font-family: 'Poppins', sans-serif;
- font-style: normal;
- font-weight: normal;
- font-size: 10px;
- line-height: 2px;
- color: #767676;
+     margin-left: 16px;
+    font-family: 'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    margin-top: 5px;
+    /* line-height: 2px; */
+    color: #767676;
 `;
 
-function Transaction() {
+function Transaction(props) {
     return (
-        <Div>
-            <Div1>TH</Div1>
+        <div style={{marginTop:'25px'}}>
+            {props.transactions.map(transaction => {
+                let sign = '+';
+                if(transaction.type === 'sent') sign = '-'
+                return (
+                    <Div>
+                        <Div1>TH</Div1>
 
-            <MiniDiv>
+                        <MiniDiv>
 
-                <div>
-                    <P3>Recieved</P3>
-                    <P4>From: SOBn7268...UG378930f</P4>
-                </div>
+                            <div>
+                                <P3>{transaction.type}</P3>
+                                {transaction.type === 'sent' && (<P4>To: {transaction.recipient}</P4>)}
+                                {transaction.type !== 'sent' && (<P4>From: {transaction.sender}</P4>)}
 
-                <p className='amount'> + N30,000</p>
-            </MiniDiv>
+                            </div>
 
-        </Div>
+                            <p className='amount' style={{color:transaction.type === 'sent'?"red":"green"}}> {sign} N{transaction.amount}</p>
+                        </MiniDiv>
+
+                    </Div>
+                )
+            })}
+        </div>
     )
 }
 

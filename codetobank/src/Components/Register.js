@@ -46,7 +46,7 @@ function Register(props) {
                             <Form>
                                 <div className='imgDiv'>
 
-                                    <img className='ellipse' src={Ellipse} />
+                                    {/* <img className='ellipse' src={Ellipse} /> */}
 
                                     <img className='oneblock' src={OneBlock} />
                                 </div>
@@ -83,7 +83,7 @@ function Register(props) {
 
                                 <button className='submit' type='submit'>Create Account</button>
 
-                                <p> Already have an account?
+                                <p className='bottom-p-text'> Already have an account?
                                     <Link to="/login"><p style={{color:'red'}}>Log in</p>
                                     </Link>
                                 </p>
