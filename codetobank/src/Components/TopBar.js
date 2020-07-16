@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import man from '../Images/man.png';
+import avatar from '../Images/avatar.png';
 
 // import { Div, H2, P } from "../styles/TopBarStyles";
 
@@ -40,7 +40,7 @@ function TopBar( props) {
     <Div>
     <P>Hello, {props.user.data.firstName} {props.user.data.lastName}</P>
 
-              <Img src={man}/>
+              <Img src={avatar}/>
   
     </Div>
   );
