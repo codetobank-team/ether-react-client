@@ -12,8 +12,9 @@ export const register = userData => dispatch => {
     dispatch({ type: types.REGISTER_START })
     return axios.post(`${apiURL}/auth/register`, userData)
         .then(res => {
-            localStorage.setItem('token', res.data.token)
-            dispatch({ type: types.REGISTER_SUCCESS, payload: res.data })
+            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('user', JSON.stringify(res.data));
+            dispatch({ type: types.LOGIN_SUCCESS, payload: res.data });
             history.push("/app/dashboard")
         })
         .catch(err => {
