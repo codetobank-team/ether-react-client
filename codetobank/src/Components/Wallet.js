@@ -107,7 +107,7 @@ function Wallet(props) {
 
                                 <div>
                                     <p>Enter Transaction Pin</p>
-                                    <Input type='text' placeholder='****' onChange={onPinChange} value={pin} />
+                                    <Input type='password' placeholder='****' onChange={onPinChange} value={pin} />
                                 </div>
                             </div>
 
