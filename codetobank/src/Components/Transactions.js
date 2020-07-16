@@ -7,7 +7,8 @@ function Transaction(props) {
         <div style={{marginTop:'25px'}}>
             {props.transactions.map(transaction => {
                 let sign = '+';
-                if(transaction.type === 'sent') sign = '-'
+               
+                if(transaction.type === 'sent') sign = '-' 
                 return (
                     <Div>
                         <Div1><i class="fa fa-arrow-down" aria-hidden="true"></i></Div1>

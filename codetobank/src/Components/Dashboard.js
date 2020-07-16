@@ -44,7 +44,7 @@ function Dashboard(props) {
                             <img src={pills} style={{ width: "22px", height: "22px", marginRight: '9px', marginLeft: '6px' }} />
                             <div style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
                                 <p>Stay informed : COVID-19</p> <br />
-                                <a href='https://covid19.ncdc.gov.ng/' target='blank'>
+                                <a href='https://ngcovid19.com.ng/' target='blank'>
                                     Get the latest information from the NSCDC about the COVID-</a>
                             </div>
                         </DIV>
