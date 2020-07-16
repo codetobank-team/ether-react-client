@@ -21,7 +21,7 @@ function ReceiveModal(props) {
 
                 <section style={{ display: 'flex' }}>
                     <Div>{props.walletDetails.address}</Div>
-                    <P3> <i class="fa fa-clone" aria-hidden="true"></i>    Copy </P3>
+                    <P3> <i class="fa fa-clone" aria-hidden="true"></i> Copy </P3>
                 </section>
 
                 <DIv>Go Back</DIv>
@@ -35,7 +35,7 @@ function ReceiveModal(props) {
 const mapStateToProps = (state) => {
     return {
         walletDetails: state.transactionReducer.walletDetails,
-        user:state.authReducer
+        user: state.authReducer
     }
 }
 export default connect(mapStateToProps, { getWalletDetails })(ReceiveModal);
@@ -67,6 +67,7 @@ const Img = styled.img`
     margin-left: 90px;
     margin-bottom: 30px;
     margin-top: 30px;
+  
 `;
 
 const Div = styled.button`
