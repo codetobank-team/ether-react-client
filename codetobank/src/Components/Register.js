@@ -20,6 +20,7 @@ const initialState = {
 
 function Register(props) {
 
+    
     const validation = Yup.object().shape({
         email: Yup.string()
             .email('Email not valid')
@@ -45,10 +46,7 @@ function Register(props) {
                         return (
                             <Form>
                                 <div className='imgDiv'>
-
-                                    <img className='ellipse' src={Ellipse} />
-
-                                    <img className='oneblock' src={OneBlock} />
+                                 <img className='oneblock' src={OneBlock} />
                                 </div>
 
                                 <h2 className='h2-text'>Create Account</h2>
@@ -83,7 +81,7 @@ function Register(props) {
 
                                 <button className='submit' type='submit'>Create Account</button>
 
-                                <p> Already have an account?
+                                <p className='bottom-p-text'> Already have an account?
                                     <Link to="/login"><p style={{color:'red'}}>Log in</p>
                                     </Link>
                                 </p>

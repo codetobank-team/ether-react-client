@@ -1,18 +1,30 @@
-import React, { useState } from 'react';
-import card from '../Images/card.png';
+import React, { useState, useEffect } from 'react';
+
 import { P, P1, H2, Button, Header, WhiteButton } from '../Components/Dashboard';
 import styled from 'styled-components';
 import TopBar from '../Components/TopBar';
 import { connect } from "react-redux";
 import { axiosWithAuth } from '../axiosWithAuth';
-import { postTransactions } from '../Store/actionCreators';
+import { postTransactions, getWalletDetails, getTransactions } from '../Store/actionCreators';
+import pills from '../Images/pills.png';
+import CardComponent from './CardComponent';
+import moment from 'moment';
+import ReceiveModal from './ReceiveModal'
 
 function Wallet(props) {
+
+    useEffect(() => {
+        props.getTransactions();
+        props.getWalletDetails()
+    }, []);
+
 
     const [recieverAccountID, setRecieverAccountID] = useState('');
     const [pin, setPinChange] = useState('');
     const [amount, setAmount] = useState('');
+    const [showWalletForm, setShowWalletForm] = useState(false)
     const [referenceNote, setReferenceNote] = useState('');
+    const [showReceiveModal, setShowReceiveModal] = useState(false);
 
     const onRecieverAccountIDChange = event => {
         setRecieverAccountID(event.target.value)
@@ -32,123 +44,127 @@ function Wallet(props) {
 
     const onSubmit = (event) => {
         let request = {
-            "senderId": "5f0e1e10b346ef001ef3c71a",
-            "receiverId": recieverAccountID,
-            "transactionStatus": "COMPLETED",
-            "transactionType": "SENT",
+            "recipient": recieverAccountID,
             "transactionPin": pin,
-            "amount": amount
+            "amount": amount,
+
         }
         event.preventDefault();
-        props.postTransactions(request)
+        props.postTransactions(request, () => {
+            setShowWalletForm(false);
+            setPinChange('');
+            setAmount('')
+            setRecieverAccountID('');
+            setReferenceNote('')
+        })
     }
 
 
+    let user = JSON.parse(localStorage.getItem('user')) || {}
     return (
         <section className='dashboard-section'>
 
             <Header>
                 <P1>Wallet</P1>
-                <TopBar />
+                <TopBar user={user} />
             </Header>
 
             <div className='dashboard-content'>
                 <section className='dashboard-content-section'>
                     <div className='dashboard-info'>
                         <P>Available Balance </P>
-                        <p className='date-p'>as at date</p>
-                        <H2>N40,000</H2>
+                        <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
+                        <H2>N{props.walletDetails.balance || "0"}</H2>
 
                         <DIV>
-                            <p>Stay informed : COVID-19</p> <br />
-                            <a href='https://covid19.ncdc.gov.ng/' target='blank'>
-                                Get the latest information from the NSCDC about the COVID-19</a>
+                            <img src={pills} style={{ width: "22px", height: "22px", marginRight: '9px', marginLeft: '6px' }} />
+                            <div style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
+                                <p>Stay informed : COVID-19</p> <br />
+                                <a href='https://covid19.ncdc.gov.ng/' target='blank'>
+                                    Get the latest information from the NSCDC about the COVID-</a>
+                            </div>
                         </DIV>
 
-                        <Button>Send</Button>
+                        <Button onClick={() => setShowWalletForm(true)}>
+                            <i class="fa fa-paper-plane" aria-hidden="true" style={{ marginRight: '10px' }}></i>Send</Button>
 
-                        <WhiteButton>Recieve</WhiteButton>
+                        <WhiteButton onClick={() => setShowReceiveModal(true)}>Receive</WhiteButton>
 
                     </div>
 
-                    <div className='dashboard-info'>
-                        <img className='card-img' src={card} alt='card' />
-                    </div>
+                    <CardComponent />
                 </section>
 
+                {showWalletForm && (
+                    <div>
+                        <Div >
+                            <div style={{ marginRight: '30px' }}>
 
-                <div>
-                    <div className = "input-content-section">
-                        <div className="inputsection">
+                                <div>
+                                    <p>Receiver Account ID</p>
+                                    <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
+                                </div>
 
-                            <div>
-                                <p>Receiver Account ID</p>
-                                <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
+                                <div>
+                                    <p>Enter Transaction Pin</p>
+                                    <Input type='password' placeholder='****' onChange={onPinChange} value={pin} />
+                                </div>
                             </div>
 
                             <div>
-                                <p>Enter Transaction Pin</p>
-                                <Input type='text' placeholder='****' onChange={onPinChange} value={pin} />
+                                <div>
+                                    <p>Amount</p>
+                                    <Input type='text' placeholder='N0.00' onChange={onAmountChange} value={amount} />
+                                </div>
+
+
+                                <div>
+
+                                    <p>Reference note</p>
+                                    <Input type='text' placeholder='Optional' onChange={onReferenceNoteChange} value={referenceNote} />
+
+                                </div>
+
+                                <ButtonDiv>
+
+                                    <Button onClick={onSubmit} >
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Send</Button>
+                                </ButtonDiv>
+
                             </div>
-                        </div>
 
-                        <div className="inputsection" >
-                            <div>
-                                <p>Amount</p>
-                                <Input type='text' placeholder='N0.00' onChange={onAmountChange} value={amount} />
-                            </div>
-
-
-                            <div>
-
-                                <p>Refrence note</p>
-                                <Input type='text' placeholder='Optional' onChange={onReferenceNoteChange} value={referenceNote} />
-
-                            </div>
-
-                            <ButtonDiv>
-                            <WButton onClick={onSubmit} >Send</WButton>
-                        </ButtonDiv>
-
-
-
-                        </div>
-                       
+                        </Div>
 
                     </div>
+                )}
 
+                {showReceiveModal && (
+                    <ReceiveModal />
+                )}
 
-
-                </div>
-
-
-
-                {/* <div>
-                    <p>Transaction History</p>
-                </div> */}
             </div>
-
-
-
-
 
         </section>
     )
 }
 
-export default connect(state => state, { postTransactions })(Wallet);
+const mapStateToProps = (state) => {
+    return {
+        walletDetails: state.transactionReducer.walletDetails,
+        user: state.authReducer
+    }
+}
+export default connect(mapStateToProps, { postTransactions, getWalletDetails, getTransactions })(Wallet);
 
 const Div = styled.div`
 display:flex;
-justify-content:space-between;
+margin-top: 60px;
 flex-wrap: wrap;
 padding-right:50px;
-/* border: 1px solid #C41426; */
 p{
-    /* font-style: normal; */
+
 font-weight: 500;
-font-size: 14px;
-/* line-height: 28px; */
+font-size: 17px;
 letter-spacing: 0.4px;
 color: #252733;
 text-align: left;
@@ -160,8 +176,7 @@ text-align: left;
 
 const ButtonDiv = styled.div`
 display:flex;
-/* justify-content: flex-end; */
-/* padding-right:50px; */
+justify-content: flex-end;
 `;
 
 const Input = styled.input`
@@ -205,14 +220,16 @@ margin-left: 77%;
 `;
 
 export const DIV = styled.div`
-font-family:  'Poppins', sans-serif;
-line-height: 0.09px;
-text-align: initial;
-border: 1px solid #C41426;
-margin-bottom:10px;
-border-radius: 5px;
-padding:5px;
-/* box-sizing: border-box; */
+    font-family: 'Poppins',sans-serif;
+    line-height: 0.09px;
+    width: 380px;
+    text-align: initial;
+    border: 1px solid #C41426;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 52px;
+    display: flex;
+    align-items:center;
 p{
     font-style: normal;
     font-weight: 600;

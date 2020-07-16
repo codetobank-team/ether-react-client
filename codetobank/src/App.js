@@ -8,6 +8,7 @@ import Container from './Components/Container';
 import Register from './Components/Register';
 import Login from './Components/Login';
 import {createBrowserHistory} from 'history';
+import AboutUs from './Components/AboutUs';
 
 
 export const history = createBrowserHistory();
@@ -18,8 +19,9 @@ function App() {
       <Router history={history}>
         <Route exact path='/' component={Register} />
         <Route exact path='/login' component={Login} />
-        <Route path='/app' component={Container} />
-        {/* <Route path='/app' render={props => authCheck(Container, props)} /> */}
+        <Route exact path='/team' component={AboutUs}/>
+        {/* <Route path='/app/dashboard' component={Container} /> */}
+        <Route path='/app/' render={props => authCheck(Container, props)} />
       </Router>
     </div>
   );
