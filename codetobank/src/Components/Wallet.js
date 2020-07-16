@@ -1,11 +1,11 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { P, P1, H2, Button, Header, WhiteButton } from '../Components/Dashboard';
 import styled from 'styled-components';
 import TopBar from '../Components/TopBar';
 import { connect } from "react-redux";
 import { axiosWithAuth } from '../axiosWithAuth';
-import { postTransactions,getWalletDetails,getTransactions } from '../Store/actionCreators';
+import { postTransactions, getWalletDetails, getTransactions } from '../Store/actionCreators';
 import pills from '../Images/pills.png';
 import CardComponent from './CardComponent';
 import moment from 'moment';
@@ -16,8 +16,8 @@ function Wallet(props) {
     useEffect(() => {
         props.getTransactions();
         props.getWalletDetails()
-      }, []);
-    
+    }, []);
+
 
     const [recieverAccountID, setRecieverAccountID] = useState('');
     const [pin, setPinChange] = useState('');
@@ -47,7 +47,7 @@ function Wallet(props) {
             "recipient": recieverAccountID,
             "transactionPin": pin,
             "amount": amount,
-        
+
         }
         event.preventDefault();
         props.postTransactions(request, () => {
@@ -73,22 +73,22 @@ function Wallet(props) {
                 <section className='dashboard-content-section'>
                     <div className='dashboard-info'>
                         <P>Available Balance </P>
-    <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
-    <H2>N{props.walletDetails.balance || "0"}</H2>
+                        <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
+                        <H2>N{props.walletDetails.balance || "0"}</H2>
 
                         <DIV>
-                            <img src={pills} style={{width:"22px",height:"22px", marginRight:'9px',marginLeft:'6px'}} />
-                            <div style={{display:"flex", justifyContent:'center', flexDirection:'column'}}>
+                            <img src={pills} style={{ width: "22px", height: "22px", marginRight: '9px', marginLeft: '6px' }} />
+                            <div style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
                                 <p>Stay informed : COVID-19</p> <br />
                                 <a href='https://covid19.ncdc.gov.ng/' target='blank'>
                                     Get the latest information from the NSCDC about the COVID-</a>
                             </div>
                         </DIV>
 
-                        <Button onClick={() => setShowWalletForm(true)}> 
-                        <i class="fa fa-paper-plane" aria-hidden="true" style={{marginRight:'10px'}}></i>Send</Button>
+                        <Button onClick={() => setShowWalletForm(true)}>
+                            <i class="fa fa-paper-plane" aria-hidden="true" style={{ marginRight: '10px' }}></i>Send</Button>
 
-                        <WhiteButton onClick = {() => setShowReceiveModal(true)}>Receive</WhiteButton>
+                        <WhiteButton onClick={() => setShowReceiveModal(true)}>Receive</WhiteButton>
 
                     </div>
 
@@ -126,7 +126,9 @@ function Wallet(props) {
                                 </div>
 
                                 <ButtonDiv>
-                                    <WhiteButton onClick={onSubmit} >Send</WhiteButton>
+
+                                    <Button onClick={onSubmit} >
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Send</Button>
                                 </ButtonDiv>
 
 
@@ -162,10 +164,10 @@ function Wallet(props) {
 const mapStateToProps = (state) => {
     return {
         walletDetails: state.transactionReducer.walletDetails,
-        user:state.authReducer
+        user: state.authReducer
     }
 }
-export default connect(mapStateToProps, { postTransactions,getWalletDetails,getTransactions })(Wallet);
+export default connect(mapStateToProps, { postTransactions, getWalletDetails, getTransactions })(Wallet);
 
 const Div = styled.div`
 display:flex;
