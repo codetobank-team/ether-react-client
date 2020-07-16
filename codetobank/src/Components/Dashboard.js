@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import card from '../Images/card.png';
 import TopBar from '../Components/TopBar';
 import styled from 'styled-components';
 import Transaction from './Transactions';
-import {DIV}from '../Components/Wallet';
-import {connect} from 'react-redux';
-import {getTransactions, getWalletDetails} from '../Store/actionCreators';
+import { DIV } from '../Components/Wallet';
+import { connect } from 'react-redux';
+import { getTransactions, getWalletDetails } from '../Store/actionCreators';
 import pills from '../Images/pills.png';
 import CardComponent from './CardComponent';
 import moment from 'moment';
@@ -17,16 +17,16 @@ function Dashboard(props) {
     useEffect(() => {
         props.getTransactions();
         props.getWalletDetails()
-      }, []);
-    
-      let user = JSON.parse(localStorage.getItem('user')) || {}
+    }, []);
+
+    let user = JSON.parse(localStorage.getItem('user')) || {}
     return (
-      
+
         <section className='dashboard-section'>
 
             <Header>
                 <P1>Dashboard</P1>
-                <TopBar user={user}/>
+                <TopBar user={user} />
             </Header>
 
 
@@ -35,14 +35,14 @@ function Dashboard(props) {
 
                 <section className='dashboard-content-section'>
                     <div className='dashboard-info'>
-                    <P>Available Balance </P>
-    <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
-    <H2>N{props.walletDetails.balance || "0"}</H2>
-                        
+                        <P>Available Balance </P>
+                        <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
+                        <H2>N{props.walletDetails.balance || "0"}</H2>
+
 
                         <DIV>
-                        <img src={pills} style={{width:"22px",height:"22px", marginRight:'9px',marginLeft:'6px'}} />
-                            <div style={{display:"flex", justifyContent:'center', flexDirection:'column'}}>
+                            <img src={pills} style={{ width: "22px", height: "22px", marginRight: '9px', marginLeft: '6px' }} />
+                            <div style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
                                 <p>Stay informed : COVID-19</p> <br />
                                 <a href='https://covid19.ncdc.gov.ng/' target='blank'>
                                     Get the latest information from the NSCDC about the COVID-</a>
@@ -55,7 +55,7 @@ function Dashboard(props) {
                 </section>
                 <div>
                     <P2>Transaction History</P2>
-                    <Transaction transactions = {props.transactions || []}/>
+                    <Transaction transactions={props.transactions || []} />
                 </div>
             </div>
 
@@ -67,10 +67,10 @@ const mapStateToProps = (state) => {
     return {
         walletDetails: state.transactionReducer.walletDetails,
         transactions: state.transactionReducer.transactions,
-        user:state.authReducer
+        user: state.authReducer
     }
 }
-export default connect(mapStateToProps, {getTransactions,getWalletDetails})(Dashboard);
+export default connect(mapStateToProps, { getTransactions, getWalletDetails })(Dashboard);
 
 export const P = styled.p`
 font-family: 'Poppins', sans-serif;
