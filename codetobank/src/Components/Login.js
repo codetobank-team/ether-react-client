@@ -21,7 +21,7 @@ function Login(props) {
             .email('Email not valid')
             .required('Email is required'),
         password: Yup.string()
-            .min(8, 'Password must be 8 characters or longer')
+            .min(6, 'Password must be 6 characters or longer')
             .required('Password is required'),
     });
 
@@ -52,18 +52,18 @@ function Login(props) {
 
                                 <div>
                                     <Field className='inputs' name='email' type='email' placeholder='Email' />
-                                    <ErrorMessage name='email' component='div' />
+                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='email' component='div' />
                                 </div>
 
                                 <div>
                                     <Field className='inputs' name='password' type='password' placeholder='Password' />
-                                    <ErrorMessage name='password' component='div' />
+                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='password' component='div' />
                                 </div>
 
                                 <button className='submit' type='submit'>Login</button>
 
                                 <p className='bottom-p-text'>New to OneBlock?
-                                    <Link to="/"><p style={{color:'red'}}>Sign up here</p>
+                                    <Link to="/register"><p style={{color:'red'}}>Sign up here</p>
                                     </Link>
                                 </p>
 
