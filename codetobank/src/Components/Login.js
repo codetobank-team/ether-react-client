@@ -46,7 +46,7 @@ function Login(props) {
 
                                 </div>
 
-                                <h2 className='h2-text'>Welcome to OneBlock</h2>
+                                <h2 className='h2-text-login'>Welcome to OneBlock</h2>
 
                                 <p className='login-p'>Please login below</p>
 

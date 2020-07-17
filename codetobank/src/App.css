@@ -126,10 +126,22 @@
   font-size: 25px;
   padding-top: 40px;
 }
+
+.h2-text-login{
+  color: #c41426;
+  padding-top: 25px;
+  font-family: Poppins;
+  /* font-style: normal; */
+  font-weight: 600;
+  font-size: 25px;
+  padding-top: 96px;
+}
+
 .login-p {
   font-weight: normal;
   font-size: 12px;
-  margin-top: 20px;
+   margin-top: 9px;
+  margin-bottom: 9px;
 }
 .login-p2 {
   font-weight: 500;
@@ -169,7 +181,7 @@
   color: #ffffff;
   font-size: 14px;
   /* padding: 0.25em 1em; */
-  margin-top: 16px;
+  margin-top: 20px;
   cursor: pointer;
 }
 
