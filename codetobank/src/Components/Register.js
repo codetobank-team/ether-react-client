@@ -20,13 +20,19 @@ const initialState = {
 
 function Register(props) {
 
-    
+
     const validation = Yup.object().shape({
+        firstName: Yup.string()
+            .required('First Name is required'),
+        lastName: Yup.string()
+            .required('Last Name is required'),
+        transactionPin: Yup.string()
+            .required('Pin is required'),
         email: Yup.string()
             .email('Email not valid')
             .required('Email is required'),
         password: Yup.string()
-            .min(8, 'Password must be 8 characters or longer')
+            .min(6, 'Password must be 6 characters or longer')
             .required('Password is required'),
     });
 
@@ -46,7 +52,7 @@ function Register(props) {
                         return (
                             <Form>
                                 <div className='imgDiv'>
-                                 <img className='oneblock' src={OneBlock} />
+                                    <img className='oneblock' src={OneBlock} />
                                 </div>
 
                                 <h2 className='h2-text'>Create Account</h2>
@@ -56,33 +62,33 @@ function Register(props) {
 
                                 <div>
                                     <Field className='inputs' name='firstName' type='text' placeholder='First Name' />
-                                    <ErrorMessage name='firstName' component='div' />
+                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='firstName' component='div' />
                                 </div>
 
                                 <div>
                                     <Field className='inputs' name='lastName' type='text' placeholder='Last Name' />
-                                    <ErrorMessage name='lastName' component='div' />
+                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='lastName' component='div' />
                                 </div>
 
                                 <div>
                                     <Field className='inputs' name='transactionPin' type='text' placeholder='Transaction Pin' />
-                                    <ErrorMessage name='transactionPin' component='div' />
+                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='transactionPin' component='div' />
                                 </div>
 
                                 <div>
                                     <Field className='inputs' name='email' type='email' placeholder='Email' />
-                                    <ErrorMessage name='email' component='div' />
+                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='email' component='div' />
                                 </div>
 
                                 <div>
                                     <Field className='inputs' name='password' type='password' placeholder='Password' />
-                                    <ErrorMessage name='password' component='div' />
+                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='password' component='div' />
                                 </div>
 
                                 <button className='submit' type='submit'>Create Account</button>
 
                                 <p className='bottom-p-text'> Already have an account?
-                                    <Link to="/login"><p style={{color:'red'}}>Log in</p>
+                                    <Link to="/"><p style={{ color: 'red' }}>Log in</p>
                                     </Link>
                                 </p>
 
