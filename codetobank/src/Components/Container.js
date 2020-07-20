@@ -43,7 +43,7 @@ function Container(props) {
 
             </section>
             {showLogoutModal &&
-                (<Logout cancelModal={cancelModal} />)
+                (<Logout cancelModal={cancelModal} {...props} />)
             }
 
             <section className='section-two'>
