@@ -1,6 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+function Logout(props) {
+
+    const onLogout = () => {
+        localStorage.removeItem("token");
+        props.history.push("/");
+    }
+
+    return (
+        <Div >
+            <div>
+                <p>Are You Sure You want to Logout?</p>
+                <button onClick={onLogout}>  Yes</button>
+                <button onClick={props.cancelModal}>No</button>
+            </div>
+        </Div>
+    )
+}
+
+export default Logout;
+
 const Div = styled.div`
  background-color: #0000007a;
   position: fixed;
@@ -50,25 +71,3 @@ font-family: 'Poppins',sans-serif;
   }
 
   `;
-
-
-
-function Logout(props) {
-
-    const onLogout = () => {
-        localStorage.removeItem("token");
-        props.history.push("/");
-    }
-
-    return (
-        <Div >
-            <div>
-                <p>Are You Sure You want to Logout?</p>
-                <button onClick={onLogout}>  Yes</button>
-                <button onClick={props.cancelModal}>No</button>
-            </div>
-        </Div>
-    )
-}
-
-export default Logout;
