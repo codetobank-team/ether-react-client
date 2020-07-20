@@ -55,10 +55,11 @@ export function postTransactions(request, successCallback) {
             }
             )
             .catch(error => {
+                // console.log(error.response)
                 if (error.response && (error.response.status === 401 || error.response.status === 500)) {
                     localStorage.removeItem('user')
                     localStorage.removeItem('token')
-                    history.push("/login")
+                    history.push("/")
                 }
                 dispatch({
                     type: types.TRANSACTION_FAILURE,
