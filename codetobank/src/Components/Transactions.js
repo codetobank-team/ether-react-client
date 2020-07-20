@@ -3,15 +3,19 @@ import styled from "styled-components";
 
 
 function Transaction(props) {
+    let transactions = [...props.transactions];
+    transactions = transactions.reverse();
     return (
         <div style={{marginTop:'25px'}}>
-            {props.transactions.map(transaction => {
+            {transactions.map(transaction=> {
                 let sign = '+';
                
                 if(transaction.type === 'sent') sign = '-' 
                 return (
                     <Div>
-                        <Div1><i class="fa fa-arrow-down" aria-hidden="true"></i></Div1>
+                        <Div1>
+                        <i class={transaction.type === 'sent'?"fa fa-arrow-up":"fa fa-arrow-down"} aria-hidden="true"></i>
+                        </Div1>
 
                         <MiniDiv>
 
