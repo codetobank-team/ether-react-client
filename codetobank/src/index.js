@@ -8,7 +8,7 @@ import thunk from "redux-thunk";
 import App from './App';
 import appReducer from './Store/index';
 
-const middleware = [thunk, logger];
+const middleware = [thunk];
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
