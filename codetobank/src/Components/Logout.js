@@ -38,16 +38,24 @@ border-radius: 8px;
 color:white;
 border: #3D8A86;
 font-weight:500;
+font-size: 18px;
 cursor:pointer;
 font-family: 'Poppins',sans-serif;
+i{
+    font-size: 15px;
+    color:white;
+}
 :hover{
     background:white ;
     color:#3D8A86;
 }
 }
+
   }
 
   `;
+
+
 
 function Logout(props) {
 
@@ -60,8 +68,8 @@ function Logout(props) {
         <Div >
             <div>
                 <p>Are You Sure You want to Logout?</p>
-                <button onClick={onLogout}>Yes</button>
-                <button onClick={props.cancelModal}> No</button>
+                <button onClick={onLogout}> <i class="fa fa-frown-o" aria-hidden="true" > </i> Yes</button>
+                <button onClick={props.cancelModal}> <i class="fa fa-smile-o" aria-hidden="true"></i> No</button>
             </div>
         </Div>
     )
