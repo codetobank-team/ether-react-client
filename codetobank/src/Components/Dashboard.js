@@ -37,7 +37,7 @@ function Dashboard(props) {
                     <div className='dashboard-info'>
                         <P>Available Balance </P>
                         <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
-                        <H2>N{props.walletDetails.balance || "0"}</H2>
+                        <H2>N{props.walletDetails.balance || "0.00"}</H2>
 
 
                         <DIV>

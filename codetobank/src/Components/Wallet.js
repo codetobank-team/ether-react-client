@@ -78,7 +78,7 @@ function Wallet(props) {
                     <div className='dashboard-info'>
                         <P>Available Balance </P>
                         <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
-                        <H2>N{props.walletDetails.balance.toFixed(2) || "0.00"}</H2>
+                        <H2>N{props.walletDetails.balance || "0.00"}</H2>
 
                         <DIV>
                             <img src={pills} style={{ width: "22px", height: "22px", marginRight: '9px', marginLeft: '6px' }} />
