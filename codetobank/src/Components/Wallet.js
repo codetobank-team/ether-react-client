@@ -21,32 +21,60 @@ function Wallet(props) {
 
     const [recieverAccountID, setRecieverAccountID] = useState('');
     const [pin, setPinChange] = useState('');
-    const [amount, setAmount] = useState('');
+    const [amount, setAmount] = useState(0);
     const [showWalletForm, setShowWalletForm] = useState(false)
     const [referenceNote, setReferenceNote] = useState('');
     const [showReceiveModal, setShowReceiveModal] = useState(false);
+    const [error, setError] = useState('');
 
     const modal = () => {
         setShowReceiveModal(false)
     }
 
+    const validate = () => {
+        let isError = false;
+        if (recieverAccountID === '') {
+            setError('Please enter recievers wallet address');
+            isError = true;
+        }
+        if (pin.length < 4 || pin.length > 4) {
+            setError('Transaction PIN length must be 4')
+            isError = true;
+        }
+        if (amount === 0) {
+            setError('Amount Must be greater than 0')
+            isError = true;
+        }
+        return isError;
+
+    }
+
+
     const onRecieverAccountIDChange = event => {
         setRecieverAccountID(event.target.value)
+        setError('');
     }
 
     const onPinChange = event => {
         setPinChange(event.target.value)
+        setError('');
     }
 
     const onAmountChange = event => {
         setAmount(event.target.value)
+        setError('');
     }
 
     const onReferenceNoteChange = event => {
         setReferenceNote(event.target.value)
+        setError('');
     }
 
     const onSubmit = (event) => {
+        let isNotValid = validate();
+        if (isNotValid) {
+            return
+        }
         let request = {
             "recipient": recieverAccountID,
             "transactionPin": pin,
@@ -101,12 +129,16 @@ function Wallet(props) {
 
                 {showWalletForm && (
                     <div>
+                        <Error > {error}</Error>
+                        
                         <Div >
+
                             <div style={{ marginRight: '30px' }}>
 
                                 <div>
                                     <p>Receiver Account ID</p>
                                     <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
+                                    
                                 </div>
 
                                 <div>
@@ -118,7 +150,7 @@ function Wallet(props) {
                             <div>
                                 <div>
                                     <p>Amount</p>
-                                    <Input type='text' placeholder='N0.00' onChange={onAmountChange} value={amount} />
+                                    <Input type='number' placeholder='N0.00' onChange={onAmountChange} value={amount} />
                                 </div>
 
 
@@ -133,7 +165,9 @@ function Wallet(props) {
 
                                     <Button onClick={onSubmit} >
                                         <i class="fa fa-paper-plane" aria-hidden="true"></i> Send</Button>
+                                        
                                 </ButtonDiv>
+                                
 
                             </div>
 
@@ -176,6 +210,11 @@ text-align: left;
 }
 `;
 
+const Error = styled.p`
+font-size: 14px;
+color:red;
+margin-top:50px;
+`;
 
 
 const ButtonDiv = styled.div`
