@@ -1,143 +1,140 @@
 import React from "react";
+import '../aboutus.css';
 import styled from "styled-components";
 import Dammy from '../Images/Team/Dammy.jpeg';
 import Destiny from '../Images/Team/Destiny.jpeg';
 import Etienne from '../Images/Team/Etienne.jpeg';
 import John from '../Images/Team/John.jpeg';
 import Kelechi from '../Images/Team/Kelechi.jpeg';
-import Oye from '../Images/Team/Oye.jpeg';
+import Oye from '../Images/Team/Oye.jpg';
 import Sammy from '../Images/Team/Sammy.jpeg';
 import Seyi from '../Images/Team/Seyi.jpeg';
+import arrow from '../Images/Team/arrow.png';
+import chain from '../Images/Team/chain.png';
+import block from '../Images/Team/block.png';
+import bg from '../Images/Team/bg.png';
+import oneblocklogo from '../Images/Team/oneblocklogo.png';
+import helmet from '../Images/Team/helmet.png';
 
-
-
-export const MainDiv = styled.div`
-/* background-color:#04203D; */
-/* background-image: linear-gradient(#cc2b5e, #753a88 );  */
-width:100%;
-`;
-
-export const Section = styled.section`
-display:flex;
-width: 100%;
-flex-wrap: wrap;
-text-align: center;
-
-`;
-
-export const Img = styled.img`
-width:280px;
-height:280px;
-object-fit:contain;
-/* border-radius: 50%; */
-`;
-
-export const Div = styled.div`
-background: #fffefe;
-width: 400px;
-margin: auto;
-width: 400px;
-:hover {
-  box-shadow: 0px 1px 3px 0px #aaa;
-}
-padding-top: 10px;
-margin-top: 20px;
-`;
-
-export const P = styled.p`
-font-family: "Poppins", sans-serif;
-font-size: 16px;
-text-align: center;
-margin:5px;
-
-`;
-
-export const H6 = styled.h6`
-font-size: 20px;
-
-font-family: Lato;
-margin-top: 10px;
-`;
-
-export const H4 = styled.h4`
-text-align: center;
-font-size: 16px;
-font-family: "Poppins", sans-serif;
-/* font-family: Lato; */
-`;
-
-export const Anchor = styled.a`
-margin: 15px;
-font-size: 25px;
-color: #070707;
-`;
 
 function AboutUs() {
-
     return (
-        <MainDiv>
-            <H4>Meet The Team</H4>
-            {/* <p > Meet the amazing team that put the Insight web app all together. </p> */}
-            <Section>
-                <Div>
-                    <Img src={Dammy} alt="Dammy.jpeg" />
-                    <H6>Damilola Olawumi</H6>
-                    <P>Frontend Developer</P>
-                    
-                </Div>
+        <div>
+{/* 
+            <p className='mission'>WE HAD JUST ONE MISSION</p>
+            <img className='helmet' src={helmet} alt='helmet.png' />
 
-                <Div>
-                    <Img src={Destiny} alt="Destiny.jpeg" />
-                    <H6>Destiny Ihejirika</H6>
-                    <P>Product Designer </P>
-                    
-                </Div>
+            <img className='bg' src={bg} alt='bg.png' />
 
-                <Div>
-                    <Img src={Etienne} alt="Etienne.jpeg" />
-                    <H6>Okeke Etienne</H6>
-                    <P>Blockchain Developer</P>
-                    
-                </Div>
+            <h2>Meet The Recruits</h2> */}
 
-                <Div>
-                    <Img src={John} alt="John.jpeg" />
-                    <H6>John Okore</H6>
-                    <P>Mobile App Developer</P>
-                    
-                </Div>
+            <section className='section2'>
+            <div className='overlay'>
+            <h2 className='intro'>Meet The Code Busters</h2>
+                <section className='mini-section'>
+                    <div>
+                        <img className='people' src={Destiny} alt='destiny.png' />
+                    </div>
 
-                <Div>
-                    <Img src={Kelechi} alt="Kelechi.jpeg" />
-                    <H6>Kelechi</H6>
-                    <P>UX Designer</P>
-                    
-                </Div>
+                    <div className='text-section'>
+                        
+                        <p> <span className='span' >Name:</span> DESTINY IHEJIRIKA</p>
+                        <p> <span className='span' >Unit:</span> UI/UX SPECIALIST</p>
+                       
+                    </div>
+                </section>
 
-                
-                <Div>
-                    <Img src={Sammy} alt="Sammy.jpeg" />
-                    <H6>Samuel</H6>
-                    <P>Backend/Blockchain Developer</P>
-                    
-                </Div>
+                <section className='mini-section-two'>
+                    <div className='text-section-two'>
+                    <p> <span className='span' >Name:</span> KELECHI OKORE</p>
+                        <p> <span className='span' >Unit:</span> UI/UX SPECIALIST</p>
+                    </div>
 
-                <Div>
-                    <Img src={Oye} alt="Oye.jepg" />
-                    <H6>Oyekunle</H6>
-                    <P>Backend Developer</P>
-                    
-                </Div>
+                    <div>
+                        <img className='people' src={Kelechi} alt='kelechi.png' />
+                    </div>
+                </section>
 
-                <Div>
-                    <Img src={Seyi} alt="Seyi.jepg" />
-                    <H6>Seyi Obaweya</H6>
-                    <P>DevOps Engineer</P>
-                    
-                </Div>
-            </Section>
+                <section className='mini-section'>
+                    <div>
+                        <img className='people' src={Dammy} alt='Dammy.png' />
+                    </div>
 
-        </MainDiv>
+                    <div className='text-section'>
+                        
+                        <p> <span className='span' >Name:</span> DAMILOLA OLAWUMI</p>
+                        <p> <span className='span' >Unit:</span> WEB DEVELOPER</p>
+                       
+                    </div>
+                </section>
+
+                <section className='mini-section-two'>
+                    <div className='text-section-two'>
+                    <p> <span className='span' >Name:</span> JOHN OKORE </p>
+                        <p> <span className='span' >Unit:</span> MOBILE APP DEVELOPER</p>
+                    </div>
+
+                    <div>
+                        <img className='people' src={John} alt='John.png' />
+                    </div>
+                </section>
+
+                <section className='mini-section'>
+                    <div>
+                        <img className='people' src={Oye} alt='Oye.png' />
+                    </div>
+
+                    <div className='text-section'>
+                        
+                        <p> <span className='span' >Name:</span> OYEKUNLE OLOYEDE</p>
+                        <p> <span className='span' >Unit:</span> BACKEND DEVELOPER</p>
+                       
+                    </div>
+                </section>
+
+                <section className='mini-section-two'>
+                    <div className='text-section-two'>
+                    <p> <span className='span' >Name:</span> ETIENNE OKEKE</p>
+                        <p> <span className='span' >Unit:</span> BLOCKCHAIN DEVELOPER</p>
+                    </div>
+
+                    <div>
+                        <img className='people' src={Etienne} alt='Etienne.png' />
+                    </div>
+                </section>
+
+                <section className='mini-section'>
+                    <div>
+                        <img className='people' src={Sammy} alt='Sammy.png' />
+                    </div>
+
+                    <div className='text-section'>
+                        
+                        <p> <span className='span' >Name:</span> SAMUEL </p>
+                        <p> <span className='span' >Unit:</span> BACKEND/BLOCKCHAIN DEVELOPER</p>
+                       
+                    </div>
+                </section>
+
+                <section className='mini-section-two'>
+                    <div className='text-section-two'>
+                    <p> <span className='span' >Name:</span> SEYI OBAWEYA</p>
+                        <p> <span className='span' >Unit:</span> INFRASTRUCTURE/DEVOPS </p>
+                    </div>
+
+                    <div>
+                        <img className='people' src={Seyi} alt='Seyi.png' />
+                    </div>
+                </section>
+
+            </div>
+
+
+
+            </section>
+
+
+        </div>
     )
 }
 

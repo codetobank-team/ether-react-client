@@ -117,8 +117,8 @@ font-weight:500;
 cursor:pointer;
 font-family: 'Poppins',sans-serif;
 :hover{
-    background:white ;
-    color:#3D8A86;
+    background:#58b1ba ;
+    color:#FFFFFF;
 }
 `
 export const WhiteButton = styled.button`
@@ -133,7 +133,7 @@ margin-left:5px;
 font-weight:500;
 font-family: 'Poppins',sans-serif;
 :hover{
-    background: #3D8A86;
+    background: #58b1ba;
     color:white;
 }
 `;
