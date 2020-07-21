@@ -86,7 +86,6 @@
   width: 95px;
   height: 84px;
   margin: auto;
-  
 }
 .dashboard-logo {
   display: flex;
@@ -127,7 +126,7 @@
   padding-top: 40px;
 }
 
-.h2-text-login{
+.h2-text-login {
   color: #c41426;
   padding-top: 25px;
   font-family: Poppins;
@@ -140,7 +139,7 @@
 .login-p {
   font-weight: normal;
   font-size: 12px;
-   margin-top: 9px;
+  margin-top: 9px;
   margin-bottom: 9px;
 }
 .login-p2 {
@@ -260,6 +259,9 @@ a {
   text-align: left;
 }
 
+.ladda-button {
+  padding: 0;
+}
 .side-bar i {
   margin-right: 24px;
 }
@@ -273,6 +275,22 @@ a.active .side-bar {
   line-height: 20px;
   background-color: #f7f8fc;
   border-left: 3px solid #c41426;
+}
+
+.wallet-button {
+  width: 100px;
+  height: 42px;
+  background: #3d8a86;
+  border-radius: 8px;
+  color: white;
+  border: #3d8a86;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.wallet-button :hover {
+  background: white;
+  color: #3d8a86;
 }
 
 @media (min-width: 468px) and (max-width: 768px) {

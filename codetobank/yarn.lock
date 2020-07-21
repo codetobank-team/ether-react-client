@@ -6497,6 +6497,20 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
+ladda@^1.0.0:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/ladda/-/ladda-1.0.6.tgz#c4a3cb7fac326061d8c04bece01587fbc45db321"
+  integrity sha512-wY2Dj1ulZSQSZcFmpT96DuuuLjdj5qIMcIaH/oSWPyd240I9MI/1JxZ0tQSC81pl1Xa9cJNUUeAGNWcKbKZ70g==
+  dependencies:
+    spin.js "^2.0.0"
+
+ladda@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ladda/-/ladda-2.0.1.tgz#523bb026dfbc804bb37615a08189405406198732"
+  integrity sha512-ynRaMdW9y9ABRdTUWa60HSQjtTkoEZMiQDzzYsX8yxIEm7mxL/sxpvoLutYox1XluRif3DxLDg+3Dl1wurjnJg==
+  dependencies:
+    spin.js "^4.0.0"
+
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
@@ -8563,7 +8577,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8788,6 +8802,14 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-i
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-ladda@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-ladda/-/react-ladda-6.0.0.tgz#016f092db05fef179040380b00b50a89e463e506"
+  integrity sha512-wBs0nebPF+t2lXBCrBLT98FiNDoUY73CtOHHvcEZ7mCpnmfwjWUhGI44xIG+UAnyFgshIP58IPO5yy9Sk3uqqA==
+  dependencies:
+    ladda "^1.0.0"
+    prop-types "^15.5.8"
 
 react-redux@^7.2.0:
   version "7.2.0"
@@ -9800,6 +9822,16 @@ spdy@^4.0.1:
     http-deceiver "^1.2.7"
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
+
+spin.js@^2.0.0:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/spin.js/-/spin.js-2.3.2.tgz#6caa56d520673450fd5cfbc6971e6d0772c37a1a"
+  integrity sha1-bKpW1SBnNFD9XPvGlx5tB3LDeho=
+
+spin.js@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/spin.js/-/spin.js-4.1.0.tgz#afcf12738fafd5f6aa0a385a5b4cec45c86a3555"
+  integrity sha512-WI8O1OdJlKjialIhB9Z5RfFFM4pI7Hohik76bB3N4Ep3N/vTDPZiRU8QeefyLbmpI5n2bFQXgticl2g+/KiKYA==
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

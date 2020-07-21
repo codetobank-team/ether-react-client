@@ -7,6 +7,9 @@ import * as Yup from 'yup';
 import loginPicture from '../Images/loginPicture.png';
 import OneBlock from '../Images/OneBlock.png';
 import Ellipse from '../Images/Ellipse.png';
+import LaddaButton, { XL, SLIDE_UP,SLIDE_RIGHT,L } from 'react-ladda';
+// import { EXPAND_RIGHT, CONTRACT } from 'react-ladda/dist/constants';
+
 
 const initialState = {
     email: '',
@@ -15,7 +18,7 @@ const initialState = {
 
 function Login(props) {
 
-  
+
     const validation = Yup.object().shape({
         email: Yup.string()
             .email('Email not valid')
@@ -25,6 +28,7 @@ function Login(props) {
             .required('Password is required'),
     });
 
+    console.log(props.loading)
 
     return (
         <div className='main-container'>
@@ -42,7 +46,7 @@ function Login(props) {
                             <Form>
                                 <div className='imgDiv'>
 
-                                <img className='oneblock' src={OneBlock} />
+                                    <img className='oneblock' src={OneBlock} />
 
                                 </div>
 
@@ -52,18 +56,32 @@ function Login(props) {
 
                                 <div>
                                     <Field className='inputs' name='email' type='email' placeholder='Email' />
-                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='email' component='div' />
+                                    <ErrorMessage style={{ color: '#c41426', fontSize: '10px' }} name='email' component='div' />
                                 </div>
 
                                 <div>
                                     <Field className='inputs' name='password' type='password' placeholder='Password' />
-                                    <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='password' component='div' />
+                                    <ErrorMessage style={{ color: '#c41426', fontSize: '10px' }} name='password' component='div' />
                                 </div>
 
-                                <button className='submit' type='submit'>Login</button>
+                        {/* <button className='submit' type='submit'>{props.isSubmitting?"Loading":"Login"}</button> */}
+                                <LaddaButton
+                                    loading={props.isSubmitting}
+                                    onClick={props.login}
+                                    data-color="#eee"
+                                    data-size={L}
+                                    data-style={SLIDE_UP}
+                                    className='submit'
+                                    data-spinner-size={20}
+                                    data-spinner-color="#ddd"
+                                    type='submit'
+                                    data-spinner-lines={12}
+                                >
+                                   Login
+                                </LaddaButton>
 
                                 <p className='bottom-p-text'>New to OneBlock?
-                                    <Link to="/register"><p style={{color:'red'}}>Sign up here</p>
+                                    <Link to="/register"><p style={{ color: 'red' }}>Sign up here</p>
                                     </Link>
                                 </p>
 

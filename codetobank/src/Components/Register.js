@@ -7,6 +7,8 @@ import * as Yup from 'yup';
 import one from '../Images/one.png';
 import OneBlock from '../Images/OneBlock.png';
 import Ellipse from '../Images/Ellipse.png';
+import LaddaButton, { SLIDE_UP,L } from 'react-ladda';
+import { EXPAND_RIGHT } from 'react-ladda/dist/constants';
 
 
 
@@ -85,7 +87,22 @@ function Register(props) {
                                     <ErrorMessage style={{color:'#c41426', fontSize:'10px'}} name='password' component='div' />
                                 </div>
 
-                                <button className='submit' type='submit'>Create Account</button>
+                                {/* <button className='submit' type='submit'>Create Account</button> */}
+
+                                <LaddaButton
+                                    loading={props.isSubmitting}
+                                    onClick={props.register}
+                                    data-color="#eee"
+                                    data-size={L}
+                                    data-style={EXPAND_RIGHT}
+                                    className='submit'
+                                    data-spinner-size={20}
+                                    data-spinner-color="#ddd"
+                                    type='submit'
+                                    data-spinner-lines={12}
+                                >
+                                   Create Account
+                                </LaddaButton>
 
                                 <p className='bottom-p-text'> Already have an account?
                                     <Link to="/"><p style={{ color: 'red' }}>Log in</p>
