@@ -63,8 +63,8 @@ font-size: 18px;
 cursor:pointer;
 font-family: 'Poppins',sans-serif;
 :hover{
-    background:white ;
-    color:#c41426;
+    background:#c41414b0 ;
+    color:#ffffff;
 }
 }
 
