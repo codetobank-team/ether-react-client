@@ -260,6 +260,9 @@ a {
   text-align: left;
 }
 
+.ladda-button{
+  padding:0;
+}
 .side-bar i {
   margin-right: 24px;
 }
