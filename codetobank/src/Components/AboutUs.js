@@ -51,7 +51,7 @@ function AboutUs() {
                     </div>
 
                     <div>
-                        <img className='people' src={Kelechi} alt='kelechi.png' />
+                        <img className='people2' src={Kelechi} alt='kelechi.png' />
                     </div>
                 </section>
 
@@ -75,7 +75,7 @@ function AboutUs() {
                     </div>
 
                     <div>
-                        <img className='people' src={John} alt='John.png' />
+                        <img className='people2' src={John} alt='John.png' />
                     </div>
                 </section>
 
@@ -99,7 +99,7 @@ function AboutUs() {
                     </div>
 
                     <div>
-                        <img className='people' src={Etienne} alt='Etienne.png' />
+                        <img className='people2' src={Etienne} alt='Etienne.png' />
                     </div>
                 </section>
 
@@ -123,7 +123,7 @@ function AboutUs() {
                     </div>
 
                     <div>
-                        <img className='people' src={Seyi} alt='Seyi.png' />
+                        <img className='people2' src={Seyi} alt='Seyi.png' />
                     </div>
                 </section>
 
