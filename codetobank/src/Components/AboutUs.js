@@ -110,7 +110,7 @@ function AboutUs() {
 
                     <div className='text-section'>
                         
-                        <p> <span className='span' >Name:</span> SAMUEL </p>
+                        <p> <span className='span' >Name:</span> SAMUEL NDUBISI</p>
                         <p> <span className='span' >Unit:</span> BACKEND/BLOCKCHAIN DEVELOPER</p>
                        
                     </div>
