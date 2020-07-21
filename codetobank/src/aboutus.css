@@ -33,7 +33,17 @@
     border-radius: 50%;
     border:2px solid #C41426;
     margin-bottom: 30px;
+    margin-left: 60px;
 
+}
+
+.people2{
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    border:2px solid #C41426;
+    margin-bottom: 30px;
+    margin-right: 60px;
 }
 
 .mini-section{
