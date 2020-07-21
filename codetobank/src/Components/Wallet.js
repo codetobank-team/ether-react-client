@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
 import { P, P1, H2, Button, Header, WhiteButton } from '../Components/Dashboard';
 import styled from 'styled-components';
 import TopBar from '../Components/TopBar';
 import { connect } from "react-redux";
-import { axiosWithAuth } from '../axiosWithAuth';
 import { postTransactions, getWalletDetails, getTransactions } from '../Store/actionCreators';
 import pills from '../Images/pills.png';
 import CardComponent from './CardComponent';
 import moment from 'moment';
 import ReceiveModal from './ReceiveModal'
+import LaddaButton, { XL, SLIDE_UP, SLIDE_RIGHT, L } from 'react-ladda';
 
 function Wallet(props) {
 
@@ -26,6 +25,7 @@ function Wallet(props) {
     const [referenceNote, setReferenceNote] = useState('');
     const [showReceiveModal, setShowReceiveModal] = useState(false);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const modal = () => {
         setShowReceiveModal(false)
@@ -41,7 +41,7 @@ function Wallet(props) {
             setError('Transaction PIN length must be 4')
             isError = true;
         }
-        if (amount === 0) {
+        if (amount === 0 || amount < 0) {
             setError('Amount Must be greater than 0')
             isError = true;
         }
@@ -130,7 +130,7 @@ function Wallet(props) {
                 {showWalletForm && (
                     <div>
                         <Error > {error}</Error>
-                        
+
                         <Div >
 
                             <div style={{ marginRight: '30px' }}>
@@ -138,7 +138,7 @@ function Wallet(props) {
                                 <div>
                                     <p>Receiver Account ID</p>
                                     <Input type='text' placeholder='Account ID' onChange={onRecieverAccountIDChange} value={recieverAccountID} />
-                                    
+
                                 </div>
 
                                 <div>
@@ -163,11 +163,26 @@ function Wallet(props) {
 
                                 <ButtonDiv>
 
-                                    <Button onClick={onSubmit} >
-                                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Send</Button>
-                                        
+                                    <button className='wallet-button' onClick={onSubmit} >
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
+                                    {/* <LaddaButton
+                                        onClick={() => setLoading(true)}
+                                        onClick={onSubmit}
+                                        data-color="#eee"
+                                        data-size={L}
+                                        data-style={SLIDE_UP}
+                                        className='wallet-button'
+                                        class='fa fa-paper-plane'
+                                        data-spinner-size={20}
+                                        data-spinner-color="#ddd"
+                                        type='submit'
+                                        data-spinner-lines={12}
+                                    >
+                                        Login
+                                </LaddaButton> */}
+
                                 </ButtonDiv>
-                                
+
 
                             </div>
 

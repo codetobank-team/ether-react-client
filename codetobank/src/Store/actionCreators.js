@@ -61,6 +61,10 @@ export function postTransactions(request, successCallback) {
                     localStorage.removeItem('token')
                     history.push("/")
                 }
+                if (error.response.status === 400){
+                    // console.log(error.response)
+                    alert(error.response.data.error)
+                }
                 dispatch({
                     type: types.TRANSACTION_FAILURE,
                     payload: error
@@ -112,6 +116,7 @@ export function getWalletDetails() {
             }
             )
             .catch(error => {
+                console.log(error)
                 if (error.response && (error.response.status === 401 || error.response.status === 500)) {
                     localStorage.removeItem('user')
                     localStorage.removeItem('token')
