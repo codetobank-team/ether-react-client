@@ -1,5 +1,5 @@
 import React from "react";
-import '../aboutus.css';
+import './aboutus.css';
 import styled from "styled-components";
 import Dammy from '../Images/Team/Dammy.jpeg';
 import Destiny from '../Images/Team/Destiny.jpeg';

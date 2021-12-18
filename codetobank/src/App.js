@@ -1,6 +1,7 @@
 import React from 'react';
 import './reset.css';
 import './App.css';
+import './Components/Dashboard.css';
 import { Route, Redirect, withRouter, Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionCreators from './Store/actionCreators';
@@ -20,8 +21,8 @@ function App() {
         <Route exact path='/' component={Login} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/team' component={AboutUs} />
-        {/* <Route path='/app/dashboard' component={Container} /> */}
-        <Route path='/app/' render={props => authCheck(Container, props)} />
+         <Route path='/app/' component={Container} />
+        {/*<Route path='/app/' render={props => authCheck(Container, props)} />*/}
       </Router>
     </div>
   );

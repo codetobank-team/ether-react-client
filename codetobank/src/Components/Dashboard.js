@@ -3,14 +3,11 @@ import card from '../Images/card.png';
 import TopBar from '../Components/TopBar';
 import styled from 'styled-components';
 import Transaction from './Transactions';
-import { DIV } from '../Components/Wallet';
 import { connect } from 'react-redux';
 import { getTransactions, getWalletDetails } from '../Store/actionCreators';
 import pills from '../Images/pills.png';
 import CardComponent from './CardComponent';
 import moment from 'moment';
-
-
 
 function Dashboard(props) {
 
@@ -24,39 +21,37 @@ function Dashboard(props) {
 
         <section className='dashboard-section'>
 
-            <Header>
-                <P1>Dashboard</P1>
+            <div className='dashboard-container'>
+                <p className='dashboard-p1'>Dashboard</p>
                 <TopBar user={user} />
-            </Header>
-
-
+            </div>
 
             <div className='dashboard-content'>
 
                 <section className='dashboard-content-section'>
                     <div className='dashboard-info'>
-                        <P>Available Balance </P>
+                        <p className='available-balance-text'>Available Balance </p>
                         <p className='date-p'>as at {moment().format('Do MM, YYYY')}</p>
-                        <H2>N{props.walletDetails.balance || "0.00"}</H2>
+                        <h2 className='dashboard-h2'>N{props.walletDetails.balance || "0.00"}</h2>
 
-
-                        <DIV>
-                            <img src={pills} style={{ width: "22px", height: "22px", marginRight: '9px', marginLeft: '6px' }} />
-                            <div style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
-                                <p>Stay informed : COVID-19</p> <br />
-                                <a href='https://covid19.ncdc.gov.ng/' target='blank'>
+                        <div className='container-mini-div'>
+                            <img className='container-mini-div-img' src={pills} alt='pills'  />
+                            <div className='mini-div-2'>
+                                <p className='mini-div-text'>Stay informed : COVID-19</p> <br />
+                                <a className='mini-div-a' href='https://covid19.ncdc.gov.ng/' target='blank'>
                                     Get the latest information from the NSCDC about the COVID-</a>
                             </div>
-                        </DIV>
+                        </div>
                     </div>
 
                     <CardComponent />
-
                 </section>
+
                 <div>
-                    <P2>Transaction History</P2>
+                    <p className='transaction-p'>Transaction History</p>
                     <Transaction transactions={props.transactions || []} />
                 </div>
+
             </div>
 
         </section>
@@ -71,84 +66,3 @@ const mapStateToProps = (state) => {
     }
 }
 export default connect(mapStateToProps, { getTransactions, getWalletDetails })(Dashboard);
-
-export const P = styled.p`
-font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 19px;
-line-height: 28px;
-letter-spacing: 0.4px;
-`;
-
-export const P1 = styled.p`
-font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 19px;
-line-height: 28px;
-letter-spacing: 0.4px;
-color: #C41426;
-`;
-
-export const H2 = styled.h2`
-    font-family: 'Poppins',sans-serif;
-    font-weight: bold;
-    font-size: 40px;
-    margin: 13px 0 28px 0;
-    /* line-height: 50px; */
-    text-align: center;
-    -webkit-letter-spacing: 1px;
-    -moz-letter-spacing: 1px;
-    -ms-letter-spacing: 1px;
-    letter-spacing: 1px;
-    color: #C41426;
-    text-align: start;
-`;
-
-export const Button = styled.button`
-width: 100px;
-height: 42px;
-background: #3D8A86;
-border-radius: 8px;
-color:white;
-border: #3D8A86;
-font-weight:500;
-cursor:pointer;
-font-family: 'Poppins',sans-serif;
-:hover{
-    background:#58b1ba ;
-    color:#FFFFFF;
-}
-`
-export const WhiteButton = styled.button`
-width: 100px;
-height: 42px;
-background: white;
-cursor:pointer;
-border-radius: 8px;
-color:#3D8A86;
-border: 1px solid #3D8A86;
-margin-left:5px;
-font-weight:500;
-font-family: 'Poppins',sans-serif;
-:hover{
-    background: #58b1ba;
-    color:white;
-}
-`;
-
-export const Header = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 34px;
-`;
-
-const P2 = styled.p`
-font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 24px;
-`;

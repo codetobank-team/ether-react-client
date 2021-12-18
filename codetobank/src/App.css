@@ -248,6 +248,13 @@ a {
   left: 27px;
 }
 
+.bottom{
+  bottom:25px;
+}
+.dashboard-info{
+  position: relative;
+}
+
 .side-bar {
   font-family: "Poppins", sans-serif;
   padding-top: 20px;
@@ -255,8 +262,8 @@ a {
   padding-left: 40px;
   color: #9fa2b4;
   font-size: 16px;
-  /* padding-bottom: 40px; */
   text-align: left;
+  cursor: pointer;
 }
 
 .ladda-button {
@@ -277,22 +284,6 @@ a.active .side-bar {
   border-left: 3px solid #c41426;
 }
 
-.wallet-button {
-  width: 100px;
-  height: 42px;
-  background: #3d8a86;
-  border-radius: 8px;
-  color: white;
-  border: #3d8a86;
-  font-weight: 500;
-  cursor: pointer;
-  font-family: "Poppins", sans-serif;
-}
-.wallet-button :hover {
-  background: white;
-  color: #3d8a86;
-}
-
 @media (min-width: 468px) and (max-width: 768px) {
   .reg-img {
     width: 100%;
@@ -300,9 +291,14 @@ a.active .side-bar {
     object-fit: cover;
   }
 
-  .card-img {
-    display: none;
+  .dashboard-content-section{
+    display: block;
   }
+  .dashboard-info{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
 }
 
 @media (max-width: 468px) {
@@ -324,8 +320,7 @@ a.active .side-bar {
   opacity: 1;
   margin-top: 30px;
   border-radius: 10px;
-  width: 421px;
-  /* height: 562px; */
+  max-width: 360px;
   margin: auto;
 }
 

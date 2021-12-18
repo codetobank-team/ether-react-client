@@ -6,7 +6,7 @@ import avatar from '../Images/avatar.png';
 function TopBar(props) {
   return (
     <Div>
-      <P>Hello, {props.user.data.firstName} {props.user.data.lastName}</P>
+      <P>Hello, {props?.user?.data?.firstName} {props?.user?.data?.lastName}</P>
 
       <Img src={avatar} />
 

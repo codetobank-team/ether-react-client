@@ -25,17 +25,15 @@ function Container(props) {
 
                 <div className='dashboard-logo'>
                     <img className='container-ellipse' src={Ellipse} />
-
                 </div>
-                <NavLink exact to='/app/dashboard'>
 
+                <NavLink exact to='/app/dashboard'>
                     <h3 className='side-bar' >  <i class="fa fa-pie-chart" aria-hidden="true"></i> Dashboard</h3>
                 </NavLink>
 
                 <NavLink exact to='/app/wallet'>
                     <h3 className='side-bar'><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Wallet</h3>
                 </NavLink>
-
 
                 <h3 className='side-bar' onClick={() => {
                     setShowLogoutModal(true)
@@ -49,9 +47,7 @@ function Container(props) {
             <section className='section-two'>
                 <Route exact path="/app/dashboard" render={props => <Dashboard {...props} />} />
                 <Route exact path="/app/wallet" render={props => <Wallet {...props} />} />
-                
             </section>
-
 
         </div>
     )
